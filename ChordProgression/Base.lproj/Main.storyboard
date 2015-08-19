@@ -21,17 +21,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Hello World" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QfC-No-bi6">
-                                <rect key="frame" x="201" y="275" width="198" height="49"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Hello Chord" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QfC-No-bi6">
+                                <rect key="frame" x="201" y="28" width="198" height="49"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="30"/>
                                 <color key="textColor" red="0.40000000596046448" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUu-vs-qU1">
+                                <rect key="frame" x="263" y="85" width="75" height="30"/>
+                                <state key="normal" title="Play Chord"/>
+                                <connections>
+                                    <action selector="playChord:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fg6-Av-ZD2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="QfC-No-bi6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ej5-jT-3rs"/>
-                            <constraint firstItem="QfC-No-bi6" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="stG-1j-Nl3"/>
+                            <constraint firstItem="fUu-vs-qU1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2sj-Y9-7nl"/>
+                            <constraint firstItem="fUu-vs-qU1" firstAttribute="top" secondItem="QfC-No-bi6" secondAttribute="bottom" constant="50" id="5jY-HZ-DFL"/>
+                            <constraint firstItem="QfC-No-bi6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ADs-Uk-69k"/>
+                            <constraint firstItem="QfC-No-bi6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="FmN-X4-Jvd"/>
                         </constraints>
                     </view>
                 </viewController>
