@@ -34,15 +34,44 @@
                                     <action selector="playChord:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fg6-Av-ZD2"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v9V-gw-ssX">
+                                <rect key="frame" x="279" y="254" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wc-xG-h0t">
+                                <rect key="frame" x="279" y="288" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9MG-3A-mSn">
+                                <rect key="frame" x="279" y="324" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="fUu-vs-qU1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2sj-Y9-7nl"/>
                             <constraint firstItem="fUu-vs-qU1" firstAttribute="top" secondItem="QfC-No-bi6" secondAttribute="bottom" constant="50" id="5jY-HZ-DFL"/>
+                            <constraint firstItem="1wc-xG-h0t" firstAttribute="top" secondItem="v9V-gw-ssX" secondAttribute="bottom" constant="20" id="9b1-6J-BKO"/>
                             <constraint firstItem="QfC-No-bi6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ADs-Uk-69k"/>
+                            <constraint firstItem="v9V-gw-ssX" firstAttribute="top" secondItem="fUu-vs-qU1" secondAttribute="bottom" constant="139" id="ALe-Gj-lqT"/>
                             <constraint firstItem="QfC-No-bi6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="FmN-X4-Jvd"/>
+                            <constraint firstItem="v9V-gw-ssX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ObK-n9-oPn"/>
+                            <constraint firstItem="1wc-xG-h0t" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eyI-lH-dXJ"/>
+                            <constraint firstItem="9MG-3A-mSn" firstAttribute="top" secondItem="1wc-xG-h0t" secondAttribute="bottom" constant="20" id="qCR-66-alk"/>
+                            <constraint firstItem="9MG-3A-mSn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zhg-xA-0Uw"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="chordsPlayed" destination="9MG-3A-mSn" id="7CT-6L-g4r"/>
+                        <outlet property="key" destination="v9V-gw-ssX" id="Kqa-0Q-pAQ"/>
+                        <outlet property="progression" destination="1wc-xG-h0t" id="SW3-6k-yyC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
