@@ -11,7 +11,7 @@ import AVFoundation
 
 
 
-var chord:AVAudioPlayer = AVAudioPlayer()
+var chord = AVAudioPlayer()
 
 
 
@@ -25,32 +25,35 @@ class ViewController: UIViewController {
     
     @IBAction func playChord(sender: AnyObject) {
         
-        let i = Int(arc4random_uniform(7))
+        let i = Int(arc4random_uniform(8))
+		print(i)
         let j = i + 1
     
-        let chordURL:NSURL = NSBundle.mainBundle().URLForResource("\(j)", withExtension: "wav")!
-        
-        do {
-          
-            chord = try AVAudioPlayer(contentsOfURL: chordURL)
-            
-            
-            chord.numberOfLoops = 0
-            chord.prepareToPlay()
-            chord.play()
-            
-            key.text = "\(chordList1[i])"
-            progression.text = " "
-            chordsPlayed.text = " "
-            
+		if let chordURL = NSBundle.mainBundle().URLForResource("\(j)", withExtension: "wav") {
+			
+			do {
+			  
+				chord = try AVAudioPlayer(contentsOfURL: chordURL)
+				
+				
+				chord.numberOfLoops = 0
+				chord.play()
+				
+				key.text = "\(chordList1[i])"
+				progression.text = ""
+				chordsPlayed.text = ""
+				
 
-            
-            
-        } catch _ {
-            return
-        }
-        
-        
+				
+				
+			} catch _ {
+				return
+			}
+			
+		} else {
+			print("Unable to find audio file")
+		}
+		
     }
     
     
