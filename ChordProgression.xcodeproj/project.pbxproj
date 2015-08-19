@@ -13,6 +13,7 @@
 		791B34B81B83A1ED000505CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 791B34B71B83A1ED000505CD /* Assets.xcassets */; };
 		791B34BB1B83A1ED000505CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 791B34B91B83A1ED000505CD /* LaunchScreen.storyboard */; };
 		7952D1C81B83FD99002896BB /* 1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7952D1C71B83FD99002896BB /* 1.wav */; };
+		7952D1CE1B8404EF002896BB /* logo-small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7952D1CD1B8404EF002896BB /* logo-small.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		791B34BA1B83A1ED000505CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		791B34BC1B83A1ED000505CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7952D1C71B83FD99002896BB /* 1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 1.wav; sourceTree = "<group>"; };
+		7952D1CD1B8404EF002896BB /* logo-small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "logo-small.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				791B34B41B83A1ED000505CD /* Main.storyboard */,
 				791B34B71B83A1ED000505CD /* Assets.xcassets */,
 				791B34B91B83A1ED000505CD /* LaunchScreen.storyboard */,
+				7952D1CD1B8404EF002896BB /* logo-small.jpg */,
 				791B34BC1B83A1ED000505CD /* Info.plist */,
 			);
 			path = ChordProgression;
@@ -127,6 +130,7 @@
 				791B34BB1B83A1ED000505CD /* LaunchScreen.storyboard in Resources */,
 				791B34B81B83A1ED000505CD /* Assets.xcassets in Resources */,
 				791B34B61B83A1ED000505CD /* Main.storyboard in Resources */,
+				7952D1CE1B8404EF002896BB /* logo-small.jpg in Resources */,
 				7952D1C81B83FD99002896BB /* 1.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
