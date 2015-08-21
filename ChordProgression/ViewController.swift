@@ -15,7 +15,7 @@ var chord = AVAudioPlayer()
 
 
 
-let chordList1 = [ [1, "D", "I-IV-V", "D-G-A"], [2, "D", "I-V-I", "D-A-D"], [3, "D", "I-V-IV", "D-A-G"], [4, "G", "I-IV-V", "G-C-D"], [5, "G", "I-V-IV", "G-D-C"], [6, "G", "IV-I-V", "C-G-D"], [7, "G", "IV-V-I", "C-D-G"], [8, "G", "V-I-IV", "D-G-C"]]
+let chordList1 = [["0", "G", "V-I-IV", "D-G-C"], ["1", "D", "I-IV-V", "D-G-A"], ["2", "D", "I-V-I", "D-A-D"], ["3", "D", "I-V-IV", "D-A-G"], ["4", "G", "I-IV-V", "G-C-D"], ["5", "G", "I-V-IV", "G-D-C"], ["6", "G", "IV-I-V", "C-G-D"], ["7", "G", "IV-V-I", "C-D-G"]]
 
 class ViewController: UIViewController {
 
@@ -26,10 +26,8 @@ class ViewController: UIViewController {
     @IBAction func playChord(sender: AnyObject) {
         
         let i = Int(arc4random_uniform(8))
-		print(i)
-        let j = i + 1
     
-		if let chordURL = NSBundle.mainBundle().URLForResource("\(j)", withExtension: "wav") {
+		if let chordURL = NSBundle.mainBundle().URLForResource("\(i)", withExtension: "wav") {
 			
 			do {
 			  
@@ -39,12 +37,11 @@ class ViewController: UIViewController {
 				chord.numberOfLoops = 0
 				chord.play()
 				
-				key.text = "\(chordList1[i])"
-				progression.text = ""
-				chordsPlayed.text = ""
+				key.text = "Key of: \(chordList1[i][1])"
+				progression.text = "Type of Progression: \(chordList1[i][2])"
+				chordsPlayed.text = "Chords Played: \(chordList1[i][3])"
 				
-
-				
+			
 				
 			} catch _ {
 				return

@@ -20,7 +20,7 @@
 		79AACC671B840E78001C0F20 /* 5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79AACC5F1B840E78001C0F20 /* 5.wav */; };
 		79AACC681B840E78001C0F20 /* 6.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79AACC601B840E78001C0F20 /* 6.wav */; };
 		79AACC691B840E78001C0F20 /* 7.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79AACC611B840E78001C0F20 /* 7.wav */; };
-		79AACC6A1B840E78001C0F20 /* 8.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79AACC621B840E78001C0F20 /* 8.wav */; };
+		79AACC6A1B840E78001C0F20 /* 0.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79AACC621B840E78001C0F20 /* 0.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +39,7 @@
 		79AACC5F1B840E78001C0F20 /* 5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 5.wav; sourceTree = "<group>"; };
 		79AACC601B840E78001C0F20 /* 6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 6.wav; sourceTree = "<group>"; };
 		79AACC611B840E78001C0F20 /* 7.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 7.wav; sourceTree = "<group>"; };
-		79AACC621B840E78001C0F20 /* 8.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 8.wav; sourceTree = "<group>"; };
+		79AACC621B840E78001C0F20 /* 0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 0.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +86,7 @@
 				79AACC5F1B840E78001C0F20 /* 5.wav */,
 				79AACC601B840E78001C0F20 /* 6.wav */,
 				79AACC611B840E78001C0F20 /* 7.wav */,
-				79AACC621B840E78001C0F20 /* 8.wav */,
+				79AACC621B840E78001C0F20 /* 0.wav */,
 			);
 			path = ChordProgression;
 			sourceTree = "<group>";
@@ -150,7 +150,7 @@
 			files = (
 				791B34BB1B83A1ED000505CD /* LaunchScreen.storyboard in Resources */,
 				79AACC681B840E78001C0F20 /* 6.wav in Resources */,
-				79AACC6A1B840E78001C0F20 /* 8.wav in Resources */,
+				79AACC6A1B840E78001C0F20 /* 0.wav in Resources */,
 				79AACC671B840E78001C0F20 /* 5.wav in Resources */,
 				791B34B81B83A1ED000505CD /* Assets.xcassets in Resources */,
 				79AACC661B840E78001C0F20 /* 4.wav in Resources */,
