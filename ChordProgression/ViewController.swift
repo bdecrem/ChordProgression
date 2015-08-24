@@ -22,6 +22,21 @@ class ViewController: UIViewController {
     @IBOutlet var userGuess: UITextField!
     @IBOutlet var correctIncorrect: UILabel!
     
+    @IBOutlet var choice1Label: UIButton!
+    @IBOutlet var choice2Label: UIButton!
+    @IBOutlet var choice3Label: UIButton!
+    
+    
+    @IBAction func choice1(sender: AnyObject) {
+    }
+    
+    @IBAction func choice2(sender: AnyObject) {
+    }
+    
+    @IBAction func choice3(sender: AnyObject) {
+    }
+    
+    
     
     @IBAction func playChord(sender: AnyObject) {
         print(i)
