@@ -11,7 +11,6 @@ import AVFoundation
 
 var chord = AVAudioPlayer()
 let i = Int(arc4random_uniform(8))
-let j = Int(arc4random_uniform(8))
 let k = Int(arc4random_uniform(4))
 
 
@@ -75,19 +74,44 @@ class ViewController: UIViewController {
         
         if k == 0 {
             choice1Label.setTitle("\(chordList1[i][2])", forState: UIControlState.Normal)
-  
+            var j = Int(arc4random_uniform(8))
+            choice2Label.setTitle("\(chordList1[j][2])", forState: UIControlState.Normal)
+            j = Int(arc4random_uniform(8))
+            choice3Label.setTitle("\(chordList1[j][2])", forState: UIControlState.Normal)
+            j = Int(arc4random_uniform(8))
+            choice4Label.setTitle("\(chordList1[j][2])", forState: UIControlState.Normal)
+
+            
+            
         }
         if k == 1 {
             choice2Label.setTitle("\(chordList1[i][2])", forState: UIControlState.Normal)
-
+            var j = Int(arc4random_uniform(8))
+            choice1Label.setTitle("\(chordList1[j][2])", forState: UIControlState.Normal)
+            j = Int(arc4random_uniform(8))
+            choice3Label.setTitle("\(chordList1[j][2])", forState: UIControlState.Normal)
+            j = Int(arc4random_uniform(8))
+            choice4Label.setTitle("\(chordList1[j][2])", forState: UIControlState.Normal)
         }
+        
         if k == 2 {
             choice3Label.setTitle("\(chordList1[i][2])", forState: UIControlState.Normal)
-
+            var j = Int(arc4random_uniform(8))
+            choice1Label.setTitle("\(chordList1[j][2])", forState: UIControlState.Normal)
+            j = Int(arc4random_uniform(8))
+            choice2Label.setTitle("\(chordList1[j][2])", forState: UIControlState.Normal)
+            j = Int(arc4random_uniform(8))
+            choice4Label.setTitle("\(chordList1[j][2])", forState: UIControlState.Normal)
         }
+        
         if k == 3 {
             choice4Label.setTitle("\(chordList1[i][2])", forState: UIControlState.Normal)
-
+            var j = Int(arc4random_uniform(8))
+            choice1Label.setTitle("\(chordList1[j][2])", forState: UIControlState.Normal)
+            j = Int(arc4random_uniform(8))
+            choice2Label.setTitle("\(chordList1[j][2])", forState: UIControlState.Normal)
+            j = Int(arc4random_uniform(8))
+            choice3Label.setTitle("\(chordList1[j][2])", forState: UIControlState.Normal)
         }
         
         
