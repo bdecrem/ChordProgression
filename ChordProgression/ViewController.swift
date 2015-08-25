@@ -11,6 +11,9 @@ import AVFoundation
 
 var chord = AVAudioPlayer()
 let i = Int(arc4random_uniform(8))
+let j = Int(arc4random_uniform(8))
+let k = Int(arc4random_uniform(4))
+
 
 let chordList1 = [[0, "G", "V-I-IV", "D-G-C", 5140], [1, "D", "I-IV-V", "D-G-A", 1450], [2, "D", "I-V-I", "D-A-D", 1510], [3, "D", "I-V-IV", "D-A-G", 1540], [4, "G", "I-IV-V", "G-C-D", 1450], [5, "G", "I-V-IV", "G-D-C", 1540], [6, "G", "IV-I-V", "C-G-D", 4150], [7, "G", "IV-V-I", "C-D-G", 4510]]
 
@@ -25,6 +28,7 @@ class ViewController: UIViewController {
     @IBOutlet var choice1Label: UIButton!
     @IBOutlet var choice2Label: UIButton!
     @IBOutlet var choice3Label: UIButton!
+    @IBOutlet var choice4Label: UIButton!
     
     
     @IBAction func choice1(sender: AnyObject) {
@@ -37,6 +41,8 @@ class ViewController: UIViewController {
     }
     
     
+    @IBAction func choice4(sender: AnyObject) {
+    }
     
     @IBAction func playChord(sender: AnyObject) {
         print(i)
@@ -61,6 +67,29 @@ class ViewController: UIViewController {
         } else {
             print("Unable to find audio file")
         }
+        
+        choice1Label.setTitle("Hi", forState: UIControlState.Normal)
+        choice2Label.setTitle("Ho", forState: UIControlState.Normal)
+        choice3Label.setTitle("Ha", forState: UIControlState.Normal)
+        choice4Label.setTitle("He", forState: UIControlState.Normal)
+        
+        if k == 0 {
+            choice1Label.setTitle("\(chordList1[i][2])", forState: UIControlState.Normal)
+  
+        }
+        if k == 1 {
+            choice2Label.setTitle("\(chordList1[i][2])", forState: UIControlState.Normal)
+
+        }
+        if k == 2 {
+            choice3Label.setTitle("\(chordList1[i][2])", forState: UIControlState.Normal)
+
+        }
+        if k == 3 {
+            choice4Label.setTitle("\(chordList1[i][2])", forState: UIControlState.Normal)
+
+        }
+        
         
     }
     
