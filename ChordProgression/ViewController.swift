@@ -10,8 +10,10 @@ import UIKit
 import AVFoundation
 
 var chord = AVAudioPlayer()
-let i = Int(arc4random_uniform(8))
-let k = Int(arc4random_uniform(4))
+
+var i = 0
+var k = 0
+
 
 
 
@@ -19,8 +21,12 @@ let chordList1 = [[0, "G", "V-I-IV", "D-G-C", 5140], [1, "D", "I-IV-V", "D-G-A",
 
 let count1 = chordList1.count
 var chordList1Sequences = [String]()
-
-
+var guess = String()
+var option1 = String()
+var option2 = String()
+var option3 = String()
+var option4 = String()
+var userGuessed = String()
 
 
 
@@ -30,7 +36,6 @@ class ViewController: UIViewController {
     @IBOutlet var key: UILabel!
     @IBOutlet var progression: UILabel!
     @IBOutlet var chordsPlayed: UILabel!
-    @IBOutlet var userGuess: UITextField!
     @IBOutlet var correctIncorrect: UILabel!
     
     @IBOutlet var choice1Label: UIButton!
@@ -39,26 +44,21 @@ class ViewController: UIViewController {
     @IBOutlet var choice4Label: UIButton!
     
     
-
-    
-    
-    
-    @IBAction func choice1(sender: AnyObject) {
-    }
-    
-    @IBAction func choice2(sender: AnyObject) {
-    }
-    
-    @IBAction func choice3(sender: AnyObject) {
-    }
-    
-    
-    @IBAction func choice4(sender: AnyObject) {
-    }
-    
     @IBAction func playChord(sender: AnyObject) {
+       
+        i = Int(arc4random_uniform(8))
+        k = Int(arc4random_uniform(4))
+
+        
+        print(" ======= ")
         print(i)
         
+        correctIncorrect.text = ""
+        key.text = ""
+        progression.text = ""
+        chordsPlayed.text = ""
+
+    
         if let chordURL = NSBundle.mainBundle().URLForResource("\(i)", withExtension: "wav") {
             
             do {
@@ -122,8 +122,8 @@ class ViewController: UIViewController {
             let arrayKey = Int(arc4random_uniform(UInt32(chordList1UniqueSequences.count)))
             print(arrayKey)
             print(chordList1UniqueSequences.count)
-          randChord.append(chordList1UniqueSequences[arrayKey])
-           print(randChord[n])
+            randChord.append(chordList1UniqueSequences[arrayKey])
+            print(randChord[n])
             chordList1UniqueSequences.removeAtIndex(arrayKey)
         }
         print(randChord)
@@ -137,6 +137,10 @@ class ViewController: UIViewController {
             choice2Label.setTitle("\(randChord[0])", forState: UIControlState.Normal)
             choice3Label.setTitle("\(randChord[1])", forState: UIControlState.Normal)
             choice4Label.setTitle("\(randChord[2])", forState: UIControlState.Normal)
+            option1 = "\(chordList1[i][2])"
+            option2 = "\(randChord[0])"
+            option3 = "\(randChord[1])"
+            option4 = "\(randChord[2])"
             
             
         }
@@ -145,6 +149,10 @@ class ViewController: UIViewController {
             choice1Label.setTitle("\(randChord[0])", forState: UIControlState.Normal)
             choice3Label.setTitle("\(randChord[1])", forState: UIControlState.Normal)
             choice4Label.setTitle("\(randChord[2])", forState: UIControlState.Normal)
+            option2 = "\(chordList1[i][2])"
+            option1 = "\(randChord[0])"
+            option3 = "\(randChord[1])"
+            option4 = "\(randChord[2])"
         }
         
         if k == 2 {
@@ -152,6 +160,10 @@ class ViewController: UIViewController {
             choice1Label.setTitle("\(randChord[0])", forState: UIControlState.Normal)
             choice2Label.setTitle("\(randChord[1])", forState: UIControlState.Normal)
             choice4Label.setTitle("\(randChord[2])", forState: UIControlState.Normal)
+            option3 = "\(chordList1[i][2])"
+            option1 = "\(randChord[0])"
+            option2 = "\(randChord[1])"
+            option4 = "\(randChord[2])"
         }
         
         if k == 3 {
@@ -159,23 +171,51 @@ class ViewController: UIViewController {
             choice1Label.setTitle("\(randChord[0])", forState: UIControlState.Normal)
             choice2Label.setTitle("\(randChord[1])", forState: UIControlState.Normal)
             choice3Label.setTitle("\(randChord[2])", forState: UIControlState.Normal)
+            option4 = "\(chordList1[i][2])"
+            option1 = "\(randChord[0])"
+            option2 = "\(randChord[1])"
+            option3 = "\(randChord[2])"
         }
         
         
     }
     
+   
+    @IBAction func choice1(sender: AnyObject) {
+        
+        userGuessed = option1
+        submittedGuess(userGuessed)
+        
+    }
     
+    @IBAction func choice2(sender: AnyObject) {
+        userGuessed = option2
+        submittedGuess(userGuessed)
+        
+    }
+    
+    @IBAction func choice3(sender: AnyObject) {
+        userGuessed = option3
+        submittedGuess(userGuessed)
+        
+    }
+    
+    
+    @IBAction func choice4(sender: AnyObject) {
+        userGuessed = option4
+        submittedGuess(userGuessed)
+        
+    }
 
     
     
-    
-    @IBAction func submitGuess(sender: AnyObject) {
+
+  func submittedGuess(sender: AnyObject) {
         print(i)
         print(chordList1[i][4])
-        if userGuess.text != "" {
-            let userGuessInt = Int(userGuess.text!)
+        if userGuessed != "" {
             
-            if userGuessInt == chordList1[i][4] {
+            if userGuessed == chordList1[i][2] {
                 correctIncorrect.text = "Correct!"
             } else {
                 correctIncorrect.text = ":("
@@ -188,22 +228,16 @@ class ViewController: UIViewController {
         } else {
             correctIncorrect.text = "Please enter a guess"
         }
-        
+    
+        choice1Label.setTitle("", forState: UIControlState.Normal)
+        choice2Label.setTitle("", forState: UIControlState.Normal)
+        choice3Label.setTitle("", forState: UIControlState.Normal)
+        choice4Label.setTitle("", forState: UIControlState.Normal)
+    
     }
-    
-
-    
-
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-       
-        
-        
-        
-        
     }
     
     override func didReceiveMemoryWarning() {
