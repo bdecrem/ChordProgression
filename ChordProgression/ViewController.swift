@@ -14,9 +14,18 @@ let i = Int(arc4random_uniform(8))
 let k = Int(arc4random_uniform(4))
 
 
+
 let chordList1 = [[0, "G", "V-I-IV", "D-G-C", 5140], [1, "D", "I-IV-V", "D-G-A", 1450], [2, "D", "I-V-I", "D-A-D", 1510], [3, "D", "I-V-IV", "D-A-G", 1540], [4, "G", "I-IV-V", "G-C-D", 1450], [5, "G", "I-V-IV", "G-D-C", 1540], [6, "G", "IV-I-V", "C-G-D", 4150], [7, "G", "IV-V-I", "C-D-G", 4510]]
 
+let count1 = chordList1.count
+var chordList1Sequences = [String]()
+
+
+
+
+
 class ViewController: UIViewController {
+   
     
     @IBOutlet var key: UILabel!
     @IBOutlet var progression: UILabel!
@@ -28,6 +37,10 @@ class ViewController: UIViewController {
     @IBOutlet var choice2Label: UIButton!
     @IBOutlet var choice3Label: UIButton!
     @IBOutlet var choice4Label: UIButton!
+    
+    
+
+    
     
     
     @IBAction func choice1(sender: AnyObject) {
@@ -67,55 +80,94 @@ class ViewController: UIViewController {
             print("Unable to find audio file")
         }
         
-        choice1Label.setTitle("Hi", forState: UIControlState.Normal)
-        choice2Label.setTitle("Ho", forState: UIControlState.Normal)
-        choice3Label.setTitle("Ha", forState: UIControlState.Normal)
-        choice4Label.setTitle("He", forState: UIControlState.Normal)
+        
+        
+        //
+        //This is my logic to create a new array that is just the list of unique Chord sequences in ChordList1
+        //
+        for var l = 0; l < count1; l++  {
+            
+            chordList1Sequences.append(String(chordList1[l][2]))
+            
+            
+        }
+        print(chordList1Sequences)
+        let mySet = Set<String>(chordList1Sequences)
+        print(mySet)
+        var chordList1UniqueSequences = Array(mySet)
+        print(chordList1UniqueSequences)
+        var count2 = chordList1UniqueSequences.count
+
+        
+        // That's the end of that piece of code.
+        // Below is a chunk of code that removes the sequences that we played from the sequences available to show as wrong answers
+        
+        for var m = 0; m < count2; m++  {
+            
+            if chordList1UniqueSequences[m] == chordList1[i][2] {
+                chordList1UniqueSequences.removeAtIndex(m)
+                count2 = chordList1UniqueSequences.count
+            }
+            
+        }
+        print(chordList1UniqueSequences)
+        
+        // Now ChordList1UniqueSequences no longer holds the correct answer. 
+        // So now we are going to pick random items from that list to throw up, and then remove them from the array so that we don't show duplicate answer options
+        
+        var randChord = [String]()
+        
+        for var n = 0; n < 3; n++ {
+    
+            let arrayKey = Int(arc4random_uniform(UInt32(chordList1UniqueSequences.count)))
+            print(arrayKey)
+            print(chordList1UniqueSequences.count)
+          randChord.append(chordList1UniqueSequences[arrayKey])
+           print(randChord[n])
+            chordList1UniqueSequences.removeAtIndex(arrayKey)
+        }
+        print(randChord)
+        
+        // done.
+        // Now we are going to throw them up on screen.
+        
         
         if k == 0 {
             choice1Label.setTitle("\(chordList1[i][2])", forState: UIControlState.Normal)
-            var j = Int(arc4random_uniform(8))
-            choice2Label.setTitle("\(chordList1[j][2])", forState: UIControlState.Normal)
-            j = Int(arc4random_uniform(8))
-            choice3Label.setTitle("\(chordList1[j][2])", forState: UIControlState.Normal)
-            j = Int(arc4random_uniform(8))
-            choice4Label.setTitle("\(chordList1[j][2])", forState: UIControlState.Normal)
-
+            choice2Label.setTitle("\(randChord[0])", forState: UIControlState.Normal)
+            choice3Label.setTitle("\(randChord[1])", forState: UIControlState.Normal)
+            choice4Label.setTitle("\(randChord[2])", forState: UIControlState.Normal)
             
             
         }
         if k == 1 {
             choice2Label.setTitle("\(chordList1[i][2])", forState: UIControlState.Normal)
-            var j = Int(arc4random_uniform(8))
-            choice1Label.setTitle("\(chordList1[j][2])", forState: UIControlState.Normal)
-            j = Int(arc4random_uniform(8))
-            choice3Label.setTitle("\(chordList1[j][2])", forState: UIControlState.Normal)
-            j = Int(arc4random_uniform(8))
-            choice4Label.setTitle("\(chordList1[j][2])", forState: UIControlState.Normal)
+            choice1Label.setTitle("\(randChord[0])", forState: UIControlState.Normal)
+            choice3Label.setTitle("\(randChord[1])", forState: UIControlState.Normal)
+            choice4Label.setTitle("\(randChord[2])", forState: UIControlState.Normal)
         }
         
         if k == 2 {
             choice3Label.setTitle("\(chordList1[i][2])", forState: UIControlState.Normal)
-            var j = Int(arc4random_uniform(8))
-            choice1Label.setTitle("\(chordList1[j][2])", forState: UIControlState.Normal)
-            j = Int(arc4random_uniform(8))
-            choice2Label.setTitle("\(chordList1[j][2])", forState: UIControlState.Normal)
-            j = Int(arc4random_uniform(8))
-            choice4Label.setTitle("\(chordList1[j][2])", forState: UIControlState.Normal)
+            choice1Label.setTitle("\(randChord[0])", forState: UIControlState.Normal)
+            choice2Label.setTitle("\(randChord[1])", forState: UIControlState.Normal)
+            choice4Label.setTitle("\(randChord[2])", forState: UIControlState.Normal)
         }
         
         if k == 3 {
             choice4Label.setTitle("\(chordList1[i][2])", forState: UIControlState.Normal)
-            var j = Int(arc4random_uniform(8))
-            choice1Label.setTitle("\(chordList1[j][2])", forState: UIControlState.Normal)
-            j = Int(arc4random_uniform(8))
-            choice2Label.setTitle("\(chordList1[j][2])", forState: UIControlState.Normal)
-            j = Int(arc4random_uniform(8))
-            choice3Label.setTitle("\(chordList1[j][2])", forState: UIControlState.Normal)
+            choice1Label.setTitle("\(randChord[0])", forState: UIControlState.Normal)
+            choice2Label.setTitle("\(randChord[1])", forState: UIControlState.Normal)
+            choice3Label.setTitle("\(randChord[2])", forState: UIControlState.Normal)
         }
         
         
     }
+    
+    
+
+    
+    
     
     @IBAction func submitGuess(sender: AnyObject) {
         print(i)
@@ -139,9 +191,17 @@ class ViewController: UIViewController {
         
     }
     
+
+    
+
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       
+        
+        
         
         
     }
