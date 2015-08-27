@@ -13,7 +13,7 @@ var chord = AVAudioPlayer()
 
 var i = 0
 var k = 0
-
+var gameCompleted = true
 
 
 
@@ -33,6 +33,7 @@ var plays = Int()
 
 
 
+
 class ViewController: UIViewController {
    
     
@@ -47,12 +48,27 @@ class ViewController: UIViewController {
     @IBOutlet var choice4Label: UIButton!
     @IBOutlet var score: UILabel!
     
+    @IBOutlet var playButton: UIButton!
+    @IBOutlet var feedbackLoopWas: UIButton!
+    @IBOutlet var feedbackYouPicked: UIButton!
+    @IBOutlet var feedbackSoundsLike: UIButton!
+    
+    
+    //
+    // THE MAIN LOOP STARTS HERE //
+    //
+    
+    
     
     @IBAction func playChord(sender: AnyObject) {
        
-        i = Int(arc4random_uniform(8))
-        k = Int(arc4random_uniform(4))
-
+        if (gameCompleted == true) {
+        
+            i = Int(arc4random_uniform(8))
+            k = Int(arc4random_uniform(4))
+            print("new game")
+            gameCompleted = false
+        }
         
         print(" ======= ")
         print(i)
@@ -61,6 +77,9 @@ class ViewController: UIViewController {
         key.text = ""
         progression.text = ""
         chordsPlayed.text = ""
+        feedbackLoopWas.setTitle("", forState: UIControlState.Normal)
+        feedbackYouPicked.setTitle("", forState: UIControlState.Normal)
+        feedbackSoundsLike.setTitle("", forState: UIControlState.Normal)
             
         if let chordURL = NSBundle.mainBundle().URLForResource("\(i)", withExtension: "wav") {
             
@@ -115,7 +134,7 @@ class ViewController: UIViewController {
         }
         print(chordList1UniqueSequences)
         
-        // Now ChordList1UniqueSequences no longer holds the correct answer. 
+        // Now ChordList1UniqueSequences no longer holds the correct answer.
         // So now we are going to pick random items from that list to throw up, and then remove them from the array so that we don't show duplicate answer options
         
         var randChord = [String]()
@@ -180,8 +199,23 @@ class ViewController: UIViewController {
             option3 = "\(randChord[2])"
         }
         
+        // and turn the PLAY button into a PLAY AGAIN button
+        
+        if (gameCompleted == true) {
+            playButton.setTitle("Play Chord", forState: UIControlState.Normal)
+        } else {
+            playButton.setTitle("Play Again", forState: UIControlState.Normal)
+        }
+        
+        
         
     }
+    
+    
+    //
+    // THE MAIN LOOP ENDS HERE
+    //
+    
     
    
     @IBAction func choice1(sender: AnyObject) {
@@ -209,8 +243,24 @@ class ViewController: UIViewController {
         submittedGuess(userGuessed)
         
     }
-
     
+    
+    // three feedback buttons
+    
+    @IBAction func playLoopWas(sender: AnyObject) {
+        chord.play()
+    }
+    
+    @IBAction func playYouPicked(sender: AnyObject) {
+        
+    }
+
+    @IBAction func playSoundsLike(sender: AnyObject) {
+    }
+    
+    
+ 
+// Evaluate the user's guess and give feedback, increment the score etc
     
 
   func submittedGuess(sender: AnyObject) {
@@ -226,12 +276,26 @@ class ViewController: UIViewController {
             } else {
                 correctIncorrect.text = ":("
                 plays++
+                
+                
+                feedbackLoopWas.setTitle("The loop was: \(chordList1[i][2])", forState: UIControlState.Normal)
+
+                feedbackYouPicked.setTitle("You chose: \(userGuessed) (coming soon)", forState: UIControlState.Normal)
+
+                feedbackSoundsLike.setTitle("", forState: UIControlState.Normal)
+
+                
+                
+                
             }
             score.text = "\(points) | \(plays)"
             
             key.text = "Key of: \(chordList1[i][1])"
             progression.text = "Type of Progression: \(chordList1[i][2])"
             chordsPlayed.text = "Chords Played: \(chordList1[i][3])"
+            gameCompleted = true
+            playButton.setTitle("Play Chord", forState: UIControlState.Normal)
+
             
         } else {
             correctIncorrect.text = "Please enter a guess"

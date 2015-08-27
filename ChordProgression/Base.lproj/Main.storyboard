@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -89,6 +89,24 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="79G-yY-Zwf">
+                                <rect key="frame" x="201" y="409" width="170" height="30"/>
+                                <connections>
+                                    <action selector="playLoopWas:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YQ6-vf-Wnv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LC8-u8-r3t">
+                                <rect key="frame" x="204" y="447" width="164" height="30"/>
+                                <connections>
+                                    <action selector="playYouPicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="twK-aN-U7c"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CBj-iR-AV6">
+                                <rect key="frame" x="207" y="485" width="164" height="30"/>
+                                <connections>
+                                    <action selector="playSoundsLike:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UBD-Eb-UlM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -98,6 +116,8 @@
                             <constraint firstItem="v9V-gw-ssX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Kda-jl-3L2"/>
                             <constraint firstItem="v9V-gw-ssX" firstAttribute="top" secondItem="fIa-rU-4Ja" secondAttribute="bottom" constant="50" id="MVb-sW-e6T"/>
                             <constraint firstItem="QfC-No-bi6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PcA-7d-J0F"/>
+                            <constraint firstItem="LC8-u8-r3t" firstAttribute="top" secondItem="79G-yY-Zwf" secondAttribute="bottom" constant="8" id="Q7n-6v-gaJ"/>
+                            <constraint firstItem="79G-yY-Zwf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="R5s-3L-J23"/>
                             <constraint firstItem="xuQ-3O-Tyy" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ad6-5k-qUQ"/>
                             <constraint firstItem="fIa-rU-4Ja" firstAttribute="top" secondItem="fUu-vs-qU1" secondAttribute="bottom" constant="88" id="bZt-7w-avU"/>
                             <constraint firstItem="A9F-5f-FGP" firstAttribute="leading" secondItem="af5-so-7eX" secondAttribute="trailing" constant="45" id="cbn-mR-qJ4"/>
@@ -106,13 +126,17 @@
                             <constraint firstItem="1wc-xG-h0t" firstAttribute="top" secondItem="v9V-gw-ssX" secondAttribute="bottom" constant="13" id="eQG-tK-dV0"/>
                             <constraint firstItem="fUu-vs-qU1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eVQ-Pl-i38"/>
                             <constraint firstItem="xuQ-3O-Tyy" firstAttribute="leading" secondItem="FmC-Af-WqC" secondAttribute="trailing" constant="45" id="fYJ-jK-z0y"/>
+                            <constraint firstItem="CBj-iR-AV6" firstAttribute="top" secondItem="LC8-u8-r3t" secondAttribute="bottom" constant="8" id="fh7-qA-hB4"/>
                             <constraint firstItem="1wc-xG-h0t" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="g0U-uh-bx3"/>
+                            <constraint firstItem="79G-yY-Zwf" firstAttribute="top" secondItem="9MG-3A-mSn" secondAttribute="bottom" constant="64" id="hO4-Xx-ABf"/>
                             <constraint firstItem="QfC-No-bi6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="hvq-05-PeJ"/>
+                            <constraint firstItem="LC8-u8-r3t" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ovn-7Q-9io"/>
                             <constraint firstItem="Zr7-H2-Y8w" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="25" id="oyV-sH-BAL"/>
                             <constraint firstItem="FmC-Af-WqC" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="qPq-Ng-Xav"/>
                             <constraint firstItem="af5-so-7eX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="40" id="sQT-Ox-BBJ"/>
                             <constraint firstItem="fUu-vs-qU1" firstAttribute="top" secondItem="QfC-No-bi6" secondAttribute="bottom" constant="8" id="tSI-Fs-vAf"/>
                             <constraint firstItem="fIa-rU-4Ja" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yT2-rI-j6o"/>
+                            <constraint firstItem="CBj-iR-AV6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yeb-D7-O4T"/>
                             <constraint firstItem="Zr7-H2-Y8w" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="25" id="yjQ-ri-h1c"/>
                         </constraints>
                     </view>
@@ -123,7 +147,11 @@
                         <outlet property="choice4Label" destination="xuQ-3O-Tyy" id="N7H-W9-10h"/>
                         <outlet property="chordsPlayed" destination="9MG-3A-mSn" id="7CT-6L-g4r"/>
                         <outlet property="correctIncorrect" destination="fIa-rU-4Ja" id="KPL-f6-GYR"/>
+                        <outlet property="feedbackLoopWas" destination="79G-yY-Zwf" id="KGi-Ta-qp9"/>
+                        <outlet property="feedbackSoundsLike" destination="CBj-iR-AV6" id="t3h-8X-VXL"/>
+                        <outlet property="feedbackYouPicked" destination="LC8-u8-r3t" id="vdd-2W-S6N"/>
                         <outlet property="key" destination="v9V-gw-ssX" id="Kqa-0Q-pAQ"/>
+                        <outlet property="playButton" destination="fUu-vs-qU1" id="34W-2D-z9T"/>
                         <outlet property="progression" destination="1wc-xG-h0t" id="SW3-6k-yyC"/>
                         <outlet property="score" destination="Zr7-H2-Y8w" id="Wg8-Rg-buF"/>
                     </connections>
