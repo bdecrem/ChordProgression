@@ -17,6 +17,7 @@ var k = 0
 
 
 
+
 let chordList1 = [[0, "G", "V-I-IV", "D-G-C", 5140], [1, "D", "I-IV-V", "D-G-A", 1450], [2, "D", "I-V-I", "D-A-D", 1510], [3, "D", "I-V-IV", "D-A-G", 1540], [4, "G", "I-IV-V", "G-C-D", 1450], [5, "G", "I-V-IV", "G-D-C", 1540], [6, "G", "IV-I-V", "C-G-D", 4150], [7, "G", "IV-V-I", "C-D-G", 4510]]
 
 let count1 = chordList1.count
@@ -27,6 +28,8 @@ var option2 = String()
 var option3 = String()
 var option4 = String()
 var userGuessed = String()
+var points = Int()
+var plays = Int()
 
 
 
@@ -42,6 +45,7 @@ class ViewController: UIViewController {
     @IBOutlet var choice2Label: UIButton!
     @IBOutlet var choice3Label: UIButton!
     @IBOutlet var choice4Label: UIButton!
+    @IBOutlet var score: UILabel!
     
     
     @IBAction func playChord(sender: AnyObject) {
@@ -57,8 +61,7 @@ class ViewController: UIViewController {
         key.text = ""
         progression.text = ""
         chordsPlayed.text = ""
-
-    
+            
         if let chordURL = NSBundle.mainBundle().URLForResource("\(i)", withExtension: "wav") {
             
             do {
@@ -217,9 +220,14 @@ class ViewController: UIViewController {
             
             if userGuessed == chordList1[i][2] {
                 correctIncorrect.text = "Correct!"
+                points++
+                plays++
+                
             } else {
                 correctIncorrect.text = ":("
+                plays++
             }
+            score.text = "\(points) | \(plays)"
             
             key.text = "Key of: \(chordList1[i][1])"
             progression.text = "Type of Progression: \(chordList1[i][2])"
