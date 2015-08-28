@@ -10,6 +10,7 @@ import UIKit
 import AVFoundation
 
 var chord = AVAudioPlayer()
+var feedbackYouPickedLoop = AVAudioPlayer()
 
 var i = 0
 var k = 0
@@ -30,6 +31,10 @@ var option4 = String()
 var userGuessed = String()
 var points = Int()
 var plays = Int()
+var feedbackYouPickedSampleLoopNumber = Int()
+
+// other variables we're using: M, N
+
 
 
 
@@ -252,7 +257,22 @@ class ViewController: UIViewController {
     }
     
     @IBAction func playYouPicked(sender: AnyObject) {
-        
+        print(feedbackYouPickedSampleLoopNumber)
+        if let chordURL = NSBundle.mainBundle().URLForResource("\(feedbackYouPickedSampleLoopNumber)", withExtension: "wav") {
+            
+            do {
+                
+                feedbackYouPickedLoop = try AVAudioPlayer(contentsOfURL: chordURL)
+                feedbackYouPickedLoop.numberOfLoops = 0
+                feedbackYouPickedLoop.play()
+                
+            } catch _ {
+                return
+            }
+            
+        } else {
+            print("Unable to find audio file")
+        }
     }
 
     @IBAction func playSoundsLike(sender: AnyObject) {
@@ -279,13 +299,25 @@ class ViewController: UIViewController {
                 
                 
                 feedbackLoopWas.setTitle("The loop was: \(chordList1[i][2])", forState: UIControlState.Normal)
+                
+                //looking for the first loop in the set that is of the type the user guessed
+                
+                for var n = 0; n < chordList1.count; n++  {
+                    
+                    if chordList1[n][2] == userGuessed {
+                        feedbackYouPickedSampleLoopNumber = n
+                        n = chordList1.count
+                    }
+                    
+                }
+                
+                
 
-                feedbackYouPicked.setTitle("You chose: \(userGuessed) (coming soon)", forState: UIControlState.Normal)
-
+                feedbackYouPicked.setTitle("Sample of the progression you chose: \(userGuessed)", forState: UIControlState.Normal)
+                
+                // we're not using feedbackSoundsLike for now at least - sitting around for future use
                 feedbackSoundsLike.setTitle("", forState: UIControlState.Normal)
 
-                
-                
                 
             }
             score.text = "\(points) | \(plays)"
