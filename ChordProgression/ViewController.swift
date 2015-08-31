@@ -81,11 +81,10 @@ class ViewController: UIViewController {
        
         if (gameCompleted == true) {
             let o = UInt32(loopsAtEachLevel[level]) // pick a random number among the loops for a given level
-            i = Int(arc4random_uniform(o))
-            k = Int(arc4random_uniform(4))
+            i = Int(arc4random_uniform(o)) // i will be a random number from 0 to 7 at Level 2
+            k = Int(arc4random_uniform(4)) // k decides where we will show the correct number on the list of answer options
             wavNumber = songFileCounterAtEachLevel[level] + i // this is how we pick the right wav file
             print("new game")
-            print(o)
             print(wavNumber)
             gameCompleted = false
         }
@@ -100,7 +99,10 @@ class ViewController: UIViewController {
         feedbackLoopWas.setTitle("", forState: UIControlState.Normal)
         feedbackYouPicked.setTitle("", forState: UIControlState.Normal)
         feedbackSoundsLike.setTitle("", forState: UIControlState.Normal)
-            
+        
+        
+        // play the chord 
+        
         if let chordURL = NSBundle.mainBundle().URLForResource("\(wavNumber)", withExtension: "wav") {
             
             do {
@@ -127,18 +129,16 @@ class ViewController: UIViewController {
         //
         //This is my logic to create a new array that is just the list of unique Chord sequences in ChordListX
         //
+        
         for var l = 0; l < loopsAtEachLevel[level]; l++  {
             
             chordListXSequences.append(String(chordListX[l][2]))
             
             
         }
-        print(chordListXSequences)
         let mySet = Set<String>(chordListXSequences)
-        print(mySet)
         var chordListXUniqueSequences = Array(mySet)
-        print(chordListXUniqueSequences)
-        var count2 = chordListXUniqueSequences.count
+        var count2 = chordListXUniqueSequences.count  // count2 is the number of unique chord sequences for this level
 
         
         // That's the end of that piece of code.
@@ -152,7 +152,6 @@ class ViewController: UIViewController {
             }
             
         }
-        print(chordListXUniqueSequences)
         
         // Now ChordListXUniqueSequences no longer holds the correct answer.
         // So now we are going to pick random items from that list to throw up, and then remove them from the array so that we don't show duplicate answer options
@@ -222,9 +221,9 @@ class ViewController: UIViewController {
         // and turn the PLAY button into a PLAY AGAIN button
         
         if (gameCompleted == true) {
-            playButton.setTitle("Play Chord", forState: UIControlState.Normal)
+            playButton.setTitle("Play Chords", forState: UIControlState.Normal)
         } else {
-            playButton.setTitle("Play Again", forState: UIControlState.Normal)
+            playButton.setTitle("Repeat", forState: UIControlState.Normal)
         }
         
         
@@ -237,6 +236,9 @@ class ViewController: UIViewController {
     //
     
    
+    
+    // we record which answer the user picked 
+    
     @IBAction func choice1(sender: AnyObject) {
         
         userGuessed = option1
@@ -291,6 +293,7 @@ class ViewController: UIViewController {
         }
     }
     
+    //  we're not using playSoundsLike (for now at least)
     @IBAction func playSoundsLike(sender: AnyObject) {
     }
     
@@ -301,13 +304,11 @@ class ViewController: UIViewController {
     @IBAction func endOfLevelButton(sender: AnyObject) {
         
         if levelPassed == false {
-            print("try level 1 again")
+            print("try level \(level + 1) again")
             newGame("new game")
             
         } else {
-            print("time to play level 2")
-            print("here is the active chordlist")
-            print(chordListX)
+            print("time to play level \(level + 2)")
             newGame("next level")
         }
         
@@ -340,10 +341,6 @@ class ViewController: UIViewController {
     
 
   func submittedGuess(sender: AnyObject) {
-        print("i is")
-        print(i)
-        print("chordlistX at i is")
-        print(chordListX[i][3])
         if userGuessed != "" {
             
             if userGuessed == chordListX[i][2] {
@@ -384,11 +381,11 @@ class ViewController: UIViewController {
             progression.text = "Type of Progression: \(chordListX[i][2])"
             chordsPlayed.text = "Chords Played: \(chordListX[i][3])"
             gameCompleted = true
-            playButton.setTitle("Play Chord", forState: UIControlState.Normal)
+            playButton.setTitle("Play Chords", forState: UIControlState.Normal)
 
             
         } else {
-            correctIncorrect.text = "Please enter a guess"
+            correctIncorrect.text = "Please pick a guess"
         }
     
         // hide the answer options since the user has made their guess
@@ -404,6 +401,9 @@ class ViewController: UIViewController {
         print("3 games played")
         if points > 1 {
             levelWinLoseMessage.text = "Congrats! You passed level \(level + 1)"
+            if (level == 1) {
+                endOfLevelButtonLabel.setTitle("You've completed the game!", forState: UIControlState.Normal)
+            } else {
             endOfLevelButtonLabel.setTitle("Play Level \(level + 2)", forState: UIControlState.Normal)
             levelPassed = true
             level++
@@ -411,7 +411,7 @@ class ViewController: UIViewController {
             
             if (level == 1) {
                 chordListX = chordList2
-                
+                }
             }
             
         } else {

@@ -29,8 +29,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUu-vs-qU1">
-                                <rect key="frame" x="263" y="85" width="75" height="30"/>
-                                <state key="normal" title="Play Chord"/>
+                                <rect key="frame" x="259" y="85" width="83" height="30"/>
+                                <state key="normal" title="Play Chords"/>
                                 <connections>
                                     <action selector="playChord:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fg6-Av-ZD2"/>
                                 </connections>
