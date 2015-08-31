@@ -86,7 +86,6 @@ class ViewController: UIViewController {
             wavNumber = songFileCounterAtEachLevel[level] + i // this is how we pick the right wav file
             print("new game")
             print(wavNumber)
-            gameCompleted = false
         }
         
         print(" ======= ")
@@ -124,7 +123,7 @@ class ViewController: UIViewController {
             print("Unable to find audio file")
         }
         
-        
+    if (gameCompleted == true) {
         
         //
         //This is my logic to create a new array that is just the list of unique Chord sequences in ChordListX
@@ -220,10 +219,14 @@ class ViewController: UIViewController {
         
         // and turn the PLAY button into a PLAY AGAIN button
         
-        if (gameCompleted == true) {
-            playButton.setTitle("Play Chords", forState: UIControlState.Normal)
-        } else {
+       
             playButton.setTitle("Repeat", forState: UIControlState.Normal)
+        
+        
+            gameCompleted = false
+
+        } else {
+            print("just repeating")
         }
         
         
@@ -360,7 +363,11 @@ class ViewController: UIViewController {
                 for var n = 0; n < chordListX.count; n++  {
                     
                     if chordListX[n][2] == userGuessed {
-                        feedbackYouPickedSampleLoopNumber = n
+                        feedbackYouPickedSampleLoopNumber = (n + (100 * (level + 1)))
+                        print("the user picked N:")
+                        print(n)
+                        print("so we will play sample:")
+                        print(feedbackYouPickedSampleLoopNumber)
                         n = chordListX.count
                     }
                     
@@ -418,6 +425,8 @@ class ViewController: UIViewController {
             levelWinLoseMessage.text = "Bummer. You didn't pass level 1"
             endOfLevelButtonLabel.setTitle("Try Again", forState: UIControlState.Normal)
             levelPassed = false
+            level = 0
+            chordListX = chordList1
         }
     
     }
