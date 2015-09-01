@@ -67,6 +67,7 @@ class ViewController: UIViewController {
     @IBOutlet var feedbackSoundsLike: UIButton!
     @IBOutlet var levelWinLoseMessage: UILabel!
     @IBOutlet var endOfLevelButtonLabel: UIButton!
+    @IBOutlet var practiceButton: UIButton!
     
     
     //
@@ -91,6 +92,7 @@ class ViewController: UIViewController {
         print(" ======= ")
         print(i)
         
+        practiceButton.setTitle("", forState: UIControlState.Normal)
         correctIncorrect.text = ""
         key.text = ""
         progression.text = ""
