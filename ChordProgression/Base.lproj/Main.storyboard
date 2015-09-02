@@ -311,10 +311,10 @@
             </objects>
             <point key="canvasLocation" x="232" y="249"/>
         </scene>
-        <!--View Controller-->
+        <!--Practice View Controller-->
         <scene sceneID="uyD-g0-Np2">
             <objects>
-                <viewController id="7vB-g9-Huc" sceneMemberID="viewController">
+                <viewController id="7vB-g9-Huc" customClass="PracticeViewController" customModule="ChordProgression" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Y3e-zH-GHB"/>
                         <viewControllerLayoutGuide type="bottom" id="Hiq-kQ-QpI"/>
@@ -338,18 +338,30 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3If-B8-GEc">
                                 <rect key="frame" x="280" y="127" width="40" height="30"/>
                                 <state key="normal" title="I-IV-V"/>
+                                <connections>
+                                    <action selector="practice145:" destination="7vB-g9-Huc" eventType="touchUpInside" id="i9c-CC-UhZ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pfp-Im-6a7">
                                 <rect key="frame" x="277" y="160" width="40" height="30"/>
                                 <state key="normal" title="I-V-IV"/>
+                                <connections>
+                                    <action selector="practice154:" destination="7vB-g9-Huc" eventType="touchUpInside" id="SdP-KC-cBB"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nJ8-xt-Zg1">
                                 <rect key="frame" x="277" y="198" width="40" height="30"/>
                                 <state key="normal" title="IV-I-V"/>
+                                <connections>
+                                    <action selector="practice415:" destination="7vB-g9-Huc" eventType="touchUpInside" id="efp-fn-ra9"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RB8-Uk-tXm">
                                 <rect key="frame" x="277" y="236" width="39" height="30"/>
                                 <state key="normal" title="IV-V-I"/>
+                                <connections>
+                                    <action selector="practice451:" destination="7vB-g9-Huc" eventType="touchUpInside" id="zsf-Ro-T1G"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
