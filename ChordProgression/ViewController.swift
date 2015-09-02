@@ -22,6 +22,14 @@ let chordList1 = [[0, "G", "V-I-IV", "D-G-C", 5140], [1, "D", "I-IV-V", "D-G-A",
 
 let chordList2 = [[0, "A", "I-IV-I-V-IV", "A—D-A-E-D"], [1, "A", "I-IV-V", "Ahi-D-E (powerchord)"], [2, "A", "I-V-IV", "A—E-D"], [3, "A", "I-V-IV-I-V", "A-E-D-A-E"], [4, "A", "I-V-IV-V", "A-E-D-E"], [5, "C", "I-IV-V", "C-Fhi-G"], [6, "C", "I-IV-V", "C-F-G"], [7, "C", "I-IV-V", "Chi—F-G (powerchord)"], [8, "C", "I-V-IV", "Chi-G-F"], [9, "C", "I-V-IV", "C-G-F"], [10, "D", "I-IV-V", "D-G-A (powerchord)"], [11, "D", "I-IV-V", "Dhi-G-A"], [12, "D", "I-V-IV-IV", "D-A-G-G"], [13, "D", "I-V-IV", "D-A-G"], [14, "D", "I-V-I-IV", "Dhi-A-Dhi-G"], [15, "E", "I-IV-I-V-IV", "E-A-E-B-A (powerchord)"], [16, "E", "I-IV-V-IV", "E-A-B-A"], [17, "E", "I-V-IV", "E-B-A"], [18, "E", "I-V-IV", "Ehi-B-A (powerchord)"], [19, "G", "I-IV-V", "G-C-D"], [20, "G", "I-IV-V", "G-C-D (powerchord)"], [21, "G", "I-IV-V", "Ghi-C-D"], [22, "G", "I-V-IV", "G-D-C"], [23, "G", "I-V-IV-V", "G-D-C-D"]]
 
+let practiceArray145 = [[1, 1], [1, 4], [2, 1], [2, 2], [2, 5], [2, 6]]
+
+let practiceArray154 = [[1, 3], [1, 5], [2, 2], [2, 8], [2, 9]]
+
+let practiceArray415 = [[1, 6]]
+
+let practiceArray451 = [[1, 7]]
+
 let count1 = chordList1.count
 var chordListXSequences = [String]()
 var guess = String()
@@ -30,8 +38,8 @@ var option2 = String()
 var option3 = String()
 var option4 = String()
 var userGuessed = String()
-var points = Int()
-var plays = Int()
+var points = 0
+var plays = 0
 var feedbackYouPickedSampleLoopNumber = Int()
 var level = 0  // we will increment this upon Level Up
 var loopsAtEachLevel:[Int] = [8, 24]
@@ -68,6 +76,7 @@ class ViewController: UIViewController {
     @IBOutlet var levelWinLoseMessage: UILabel!
     @IBOutlet var endOfLevelButtonLabel: UIButton!
     @IBOutlet var practiceButton: UIButton!
+    @IBOutlet var closeButton: UIButton!
     
     
     //
@@ -93,6 +102,8 @@ class ViewController: UIViewController {
         print(i)
         
         practiceButton.setTitle("", forState: UIControlState.Normal)
+        closeButton.setTitle("X", forState: UIControlState.Normal)
+        score.text = "\(points) | \(plays)"
         correctIncorrect.text = ""
         key.text = ""
         progression.text = ""
@@ -240,6 +251,14 @@ class ViewController: UIViewController {
     // THE MAIN LOOP ENDS HERE
     //
     
+    
+    // when user presses the X button
+    
+    @IBAction func closeButtonPressed(sender: AnyObject) {
+        newGame("X Pressed")
+        
+    
+    }
    
     
     // we record which answer the user picked 
@@ -337,6 +356,16 @@ class ViewController: UIViewController {
         points = 0
         plays = 0
         score.text = "\(points) | \(plays)"
+        practiceButton.setTitle("Practice", forState: UIControlState.Normal)
+        closeButton.setTitle("", forState: UIControlState.Normal)
+        score.text = ""
+        choice1Label.setTitle("", forState: UIControlState.Normal)
+        choice2Label.setTitle("", forState: UIControlState.Normal)
+        choice3Label.setTitle("", forState: UIControlState.Normal)
+        choice4Label.setTitle("", forState: UIControlState.Normal)
+
+
+
     }
 
 // end of the newGame code
@@ -438,6 +467,7 @@ class ViewController: UIViewController {
     // end of Evaluate The User's guess
  
     
+    // practice buttons
     
   
     

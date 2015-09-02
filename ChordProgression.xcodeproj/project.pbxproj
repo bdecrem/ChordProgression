@@ -31,6 +31,7 @@
 		151038281B93C0A2004BFEE1 /* 221.wav in Resources */ = {isa = PBXBuildFile; fileRef = 151038101B93C0A2004BFEE1 /* 221.wav */; };
 		151038291B93C0A2004BFEE1 /* 222.wav in Resources */ = {isa = PBXBuildFile; fileRef = 151038111B93C0A2004BFEE1 /* 222.wav */; };
 		1510382A1B93C0A2004BFEE1 /* 223.wav in Resources */ = {isa = PBXBuildFile; fileRef = 151038121B93C0A2004BFEE1 /* 223.wav */; };
+		153F934E1B96B67800B4BECD /* PracticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153F934D1B96B67800B4BECD /* PracticeViewController.swift */; };
 		791B34B11B83A1ED000505CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791B34B01B83A1ED000505CD /* AppDelegate.swift */; };
 		791B34B31B83A1ED000505CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791B34B21B83A1ED000505CD /* ViewController.swift */; };
 		791B34B61B83A1ED000505CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 791B34B41B83A1ED000505CD /* Main.storyboard */; };
@@ -72,6 +73,7 @@
 		151038101B93C0A2004BFEE1 /* 221.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 221.wav; sourceTree = "<group>"; };
 		151038111B93C0A2004BFEE1 /* 222.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 222.wav; sourceTree = "<group>"; };
 		151038121B93C0A2004BFEE1 /* 223.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 223.wav; sourceTree = "<group>"; };
+		153F934D1B96B67800B4BECD /* PracticeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PracticeViewController.swift; sourceTree = "<group>"; };
 		791B34AD1B83A1ED000505CD /* ChordProgression.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChordProgression.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		791B34B01B83A1ED000505CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		791B34B21B83A1ED000505CD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			children = (
 				791B34B01B83A1ED000505CD /* AppDelegate.swift */,
 				791B34B21B83A1ED000505CD /* ViewController.swift */,
+				153F934D1B96B67800B4BECD /* PracticeViewController.swift */,
 				791B34B41B83A1ED000505CD /* Main.storyboard */,
 				791B34B71B83A1ED000505CD /* Assets.xcassets */,
 				791B34B91B83A1ED000505CD /* LaunchScreen.storyboard */,
@@ -266,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				153F934E1B96B67800B4BECD /* PracticeViewController.swift in Sources */,
 				791B34B31B83A1ED000505CD /* ViewController.swift in Sources */,
 				791B34B11B83A1ED000505CD /* AppDelegate.swift in Sources */,
 			);
