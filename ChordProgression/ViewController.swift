@@ -22,13 +22,6 @@ let chordList1 = [[0, "G", "V-I-IV", "D-G-C", 5140], [1, "D", "I-IV-V", "D-G-A",
 
 let chordList2 = [[0, "A", "I-IV-I-V-IV", "A—D-A-E-D"], [1, "A", "I-IV-V", "Ahi-D-E (powerchord)"], [2, "A", "I-V-IV", "A—E-D"], [3, "A", "I-V-IV-I-V", "A-E-D-A-E"], [4, "A", "I-V-IV-V", "A-E-D-E"], [5, "C", "I-IV-V", "C-Fhi-G"], [6, "C", "I-IV-V", "C-F-G"], [7, "C", "I-IV-V", "Chi—F-G (powerchord)"], [8, "C", "I-V-IV", "Chi-G-F"], [9, "C", "I-V-IV", "C-G-F"], [10, "D", "I-IV-V", "D-G-A (powerchord)"], [11, "D", "I-IV-V", "Dhi-G-A"], [12, "D", "I-V-IV-IV", "D-A-G-G"], [13, "D", "I-V-IV", "D-A-G"], [14, "D", "I-V-I-IV", "Dhi-A-Dhi-G"], [15, "E", "I-IV-I-V-IV", "E-A-E-B-A (powerchord)"], [16, "E", "I-IV-V-IV", "E-A-B-A"], [17, "E", "I-V-IV", "E-B-A"], [18, "E", "I-V-IV", "Ehi-B-A (powerchord)"], [19, "G", "I-IV-V", "G-C-D"], [20, "G", "I-IV-V", "G-C-D (powerchord)"], [21, "G", "I-IV-V", "Ghi-C-D"], [22, "G", "I-V-IV", "G-D-C"], [23, "G", "I-V-IV-V", "G-D-C-D"]]
 
-let practiceArray145 = [[1, 1], [1, 4], [2, 1], [2, 2], [2, 5], [2, 6]]
-
-let practiceArray154 = [[1, 3], [1, 5], [2, 2], [2, 8], [2, 9]]
-
-let practiceArray415 = [[1, 6]]
-
-let practiceArray451 = [[1, 7]]
 
 let count1 = chordList1.count
 var chordListXSequences = [String]()
