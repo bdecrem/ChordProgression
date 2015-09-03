@@ -198,6 +198,12 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5h-Xm-5zP">
+                                <rect key="frame" x="282" y="0.0" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -225,6 +231,8 @@
                             <constraint firstItem="fUu-vs-qU1" firstAttribute="top" secondItem="QfC-No-bi6" secondAttribute="bottom" constant="8" id="QEL-Ji-Fgw"/>
                             <constraint firstItem="Bgf-BL-9Jt" firstAttribute="centerX" secondItem="fUu-vs-qU1" secondAttribute="centerX" id="QSI-5E-KoU"/>
                             <constraint firstItem="79G-yY-Zwf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="R5s-3L-J23"/>
+                            <constraint firstItem="z5h-Xm-5zP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SbV-ny-UKt"/>
+                            <constraint firstItem="z5h-Xm-5zP" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="50" id="WaB-bQ-rD3"/>
                             <constraint firstItem="Bgf-BL-9Jt" firstAttribute="top" secondItem="fUu-vs-qU1" secondAttribute="bottom" constant="43" id="XL5-w8-9af"/>
                             <constraint firstItem="VD8-Je-Beg" firstAttribute="top" secondItem="Bgf-BL-9Jt" secondAttribute="bottom" constant="24" id="XhP-xP-ejD"/>
                             <constraint firstItem="xuQ-3O-Tyy" firstAttribute="centerY" secondItem="VD8-Je-Beg" secondAttribute="centerY" id="Y7n-cD-jdy"/>
@@ -300,6 +308,7 @@
                         <outlet property="feedbackSoundsLike" destination="CBj-iR-AV6" id="t3h-8X-VXL"/>
                         <outlet property="feedbackYouPicked" destination="LC8-u8-r3t" id="vdd-2W-S6N"/>
                         <outlet property="key" destination="v9V-gw-ssX" id="Kqa-0Q-pAQ"/>
+                        <outlet property="levelIndicator" destination="z5h-Xm-5zP" id="Poh-0a-dGI"/>
                         <outlet property="levelWinLoseMessage" destination="YZo-vJ-IGE" id="q2k-KJ-3G5"/>
                         <outlet property="playButton" destination="fUu-vs-qU1" id="34W-2D-z9T"/>
                         <outlet property="practiceButton" destination="muA-EW-7lU" id="99e-9g-xyE"/>
@@ -384,7 +393,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jSr-p3-AnF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="711" y="306"/>
+            <point key="canvasLocation" x="901" y="308"/>
         </scene>
     </scenes>
 </document>

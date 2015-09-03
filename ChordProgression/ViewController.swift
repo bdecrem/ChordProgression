@@ -37,8 +37,8 @@ var points = 0
 var plays = 0
 var feedbackYouPickedSampleLoopNumber = Int()
 var level = 0  // we will increment this upon Level Up
-var loopsAtEachLevel:[Int] = [8, 24]
-var songFileCounterAtEachLevel:[Int] = [100, 200]
+var loopsAtEachLevel:[Int] = [8, 24, 11]
+var songFileCounterAtEachLevel:[Int] = [100, 200, 300]
 var wavNumber = 100
 var chordListX = chordList1 // we will increment this upon level up
 
@@ -72,6 +72,7 @@ class ViewController: UIViewController {
     @IBOutlet var endOfLevelButtonLabel: UIButton!
     @IBOutlet var practiceButton: UIButton!
     @IBOutlet var closeButton: UIButton!
+    @IBOutlet var levelIndicator: UILabel!
     
     
     //
@@ -99,6 +100,7 @@ class ViewController: UIViewController {
         practiceButton.setTitle("", forState: UIControlState.Normal)
         closeButton.setTitle("X", forState: UIControlState.Normal)
         score.text = "\(points) | \(plays)"
+        levelIndicator.text = "Level \(level + 1)"
         correctIncorrect.text = ""
         key.text = ""
         progression.text = ""
@@ -147,6 +149,7 @@ class ViewController: UIViewController {
         var chordListXUniqueSequences = Array(mySet)
         var count2 = chordListXUniqueSequences.count  // count2 is the number of unique chord sequences for this level
 
+
         
         // That's the end of that piece of code.
         // Below is a chunk of code that removes the sequences that we played from the sequences available to show as wrong answers
@@ -178,6 +181,8 @@ class ViewController: UIViewController {
         
         // done.
         // Now we are going to throw them up on screen.
+        
+        print ("the correct chord is number \(k + 1)")
         
         
         if k == 0 {
@@ -431,19 +436,23 @@ class ViewController: UIViewController {
     
     // evaluate if the level is over, respond accordingly
     if plays == 3 {
-        print("3 games played")
         if points > 1 {
             levelWinLoseMessage.text = "Congrats! You passed level \(level + 1)"
-            if (level == 1) {
+            if (level == 2) {
                 endOfLevelButtonLabel.setTitle("You've completed the game!", forState: UIControlState.Normal)
             } else {
-            endOfLevelButtonLabel.setTitle("Play Level \(level + 2)", forState: UIControlState.Normal)
+           // endOfLevelButtonLabel.setTitle("Play Level \(level + 2)", forState: UIControlState.Normal)
             levelPassed = true
             level++
+
             chordListXSequences.removeAll()
             
             if (level == 1) {
                 chordListX = chordList2
+                }
+            
+            if (level == 2) {
+                    chordListX = chordList3
                 }
             }
             
