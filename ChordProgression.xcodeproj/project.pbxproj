@@ -32,6 +32,17 @@
 		151038291B93C0A2004BFEE1 /* 222.wav in Resources */ = {isa = PBXBuildFile; fileRef = 151038111B93C0A2004BFEE1 /* 222.wav */; };
 		1510382A1B93C0A2004BFEE1 /* 223.wav in Resources */ = {isa = PBXBuildFile; fileRef = 151038121B93C0A2004BFEE1 /* 223.wav */; };
 		153F934E1B96B67800B4BECD /* PracticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153F934D1B96B67800B4BECD /* PracticeViewController.swift */; };
+		159497AC1B980A5E00F13F5F /* 300.wav in Resources */ = {isa = PBXBuildFile; fileRef = 159497A11B980A5E00F13F5F /* 300.wav */; };
+		159497AD1B980A5E00F13F5F /* 301.wav in Resources */ = {isa = PBXBuildFile; fileRef = 159497A21B980A5E00F13F5F /* 301.wav */; };
+		159497AE1B980A5E00F13F5F /* 302.wav in Resources */ = {isa = PBXBuildFile; fileRef = 159497A31B980A5E00F13F5F /* 302.wav */; };
+		159497AF1B980A5E00F13F5F /* 303.wav in Resources */ = {isa = PBXBuildFile; fileRef = 159497A41B980A5E00F13F5F /* 303.wav */; };
+		159497B01B980A5E00F13F5F /* 304.wav in Resources */ = {isa = PBXBuildFile; fileRef = 159497A51B980A5E00F13F5F /* 304.wav */; };
+		159497B11B980A5E00F13F5F /* 305.wav in Resources */ = {isa = PBXBuildFile; fileRef = 159497A61B980A5E00F13F5F /* 305.wav */; };
+		159497B21B980A5E00F13F5F /* 306.wav in Resources */ = {isa = PBXBuildFile; fileRef = 159497A71B980A5E00F13F5F /* 306.wav */; };
+		159497B31B980A5E00F13F5F /* 307.wav in Resources */ = {isa = PBXBuildFile; fileRef = 159497A81B980A5E00F13F5F /* 307.wav */; };
+		159497B41B980A5E00F13F5F /* 308.wav in Resources */ = {isa = PBXBuildFile; fileRef = 159497A91B980A5E00F13F5F /* 308.wav */; };
+		159497B51B980A5E00F13F5F /* 309.wav in Resources */ = {isa = PBXBuildFile; fileRef = 159497AA1B980A5E00F13F5F /* 309.wav */; };
+		159497B61B980A5E00F13F5F /* 310.wav in Resources */ = {isa = PBXBuildFile; fileRef = 159497AB1B980A5E00F13F5F /* 310.wav */; };
 		791B34B11B83A1ED000505CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791B34B01B83A1ED000505CD /* AppDelegate.swift */; };
 		791B34B31B83A1ED000505CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791B34B21B83A1ED000505CD /* ViewController.swift */; };
 		791B34B61B83A1ED000505CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 791B34B41B83A1ED000505CD /* Main.storyboard */; };
@@ -74,6 +85,17 @@
 		151038111B93C0A2004BFEE1 /* 222.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 222.wav; sourceTree = "<group>"; };
 		151038121B93C0A2004BFEE1 /* 223.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 223.wav; sourceTree = "<group>"; };
 		153F934D1B96B67800B4BECD /* PracticeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PracticeViewController.swift; sourceTree = "<group>"; };
+		159497A11B980A5E00F13F5F /* 300.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 300.wav; sourceTree = "<group>"; };
+		159497A21B980A5E00F13F5F /* 301.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 301.wav; sourceTree = "<group>"; };
+		159497A31B980A5E00F13F5F /* 302.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 302.wav; sourceTree = "<group>"; };
+		159497A41B980A5E00F13F5F /* 303.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 303.wav; sourceTree = "<group>"; };
+		159497A51B980A5E00F13F5F /* 304.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 304.wav; sourceTree = "<group>"; };
+		159497A61B980A5E00F13F5F /* 305.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 305.wav; sourceTree = "<group>"; };
+		159497A71B980A5E00F13F5F /* 306.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 306.wav; sourceTree = "<group>"; };
+		159497A81B980A5E00F13F5F /* 307.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 307.wav; sourceTree = "<group>"; };
+		159497A91B980A5E00F13F5F /* 308.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 308.wav; sourceTree = "<group>"; };
+		159497AA1B980A5E00F13F5F /* 309.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 309.wav; sourceTree = "<group>"; };
+		159497AB1B980A5E00F13F5F /* 310.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 310.wav; sourceTree = "<group>"; };
 		791B34AD1B83A1ED000505CD /* ChordProgression.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChordProgression.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		791B34B01B83A1ED000505CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		791B34B21B83A1ED000505CD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +160,17 @@
 				79AACC601B840E78001C0F20 /* 106.wav */,
 				79AACC611B840E78001C0F20 /* 107.wav */,
 				79AACC621B840E78001C0F20 /* 100.wav */,
+				159497A11B980A5E00F13F5F /* 300.wav */,
+				159497A21B980A5E00F13F5F /* 301.wav */,
+				159497A31B980A5E00F13F5F /* 302.wav */,
+				159497A41B980A5E00F13F5F /* 303.wav */,
+				159497A51B980A5E00F13F5F /* 304.wav */,
+				159497A61B980A5E00F13F5F /* 305.wav */,
+				159497A71B980A5E00F13F5F /* 306.wav */,
+				159497A81B980A5E00F13F5F /* 307.wav */,
+				159497A91B980A5E00F13F5F /* 308.wav */,
+				159497AA1B980A5E00F13F5F /* 309.wav */,
+				159497AB1B980A5E00F13F5F /* 310.wav */,
 				151037FB1B93C0A2004BFEE1 /* 200.wav */,
 				151037FC1B93C0A2004BFEE1 /* 201.wav */,
 				151037FD1B93C0A2004BFEE1 /* 202.wav */,
@@ -223,13 +256,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				159497B21B980A5E00F13F5F /* 306.wav in Resources */,
+				159497B01B980A5E00F13F5F /* 304.wav in Resources */,
+				159497AE1B980A5E00F13F5F /* 302.wav in Resources */,
 				151038251B93C0A2004BFEE1 /* 218.wav in Resources */,
 				151038211B93C0A2004BFEE1 /* 214.wav in Resources */,
 				791B34BB1B83A1ED000505CD /* LaunchScreen.storyboard in Resources */,
+				159497AD1B980A5E00F13F5F /* 301.wav in Resources */,
 				79AACC681B840E78001C0F20 /* 106.wav in Resources */,
 				79AACC6A1B840E78001C0F20 /* 100.wav in Resources */,
 				1510381D1B93C0A2004BFEE1 /* 210.wav in Resources */,
 				151038271B93C0A2004BFEE1 /* 220.wav in Resources */,
+				159497B51B980A5E00F13F5F /* 309.wav in Resources */,
 				151038191B93C0A2004BFEE1 /* 206.wav in Resources */,
 				151038151B93C0A2004BFEE1 /* 202.wav in Resources */,
 				151038291B93C0A2004BFEE1 /* 222.wav in Resources */,
@@ -237,6 +275,7 @@
 				151038201B93C0A2004BFEE1 /* 213.wav in Resources */,
 				151038231B93C0A2004BFEE1 /* 216.wav in Resources */,
 				1510381B1B93C0A2004BFEE1 /* 208.wav in Resources */,
+				159497B41B980A5E00F13F5F /* 308.wav in Resources */,
 				791B34B81B83A1ED000505CD /* Assets.xcassets in Resources */,
 				151038281B93C0A2004BFEE1 /* 221.wav in Resources */,
 				151038221B93C0A2004BFEE1 /* 215.wav in Resources */,
@@ -244,18 +283,23 @@
 				151038181B93C0A2004BFEE1 /* 205.wav in Resources */,
 				1510381A1B93C0A2004BFEE1 /* 207.wav in Resources */,
 				79AACC661B840E78001C0F20 /* 104.wav in Resources */,
+				159497B31B980A5E00F13F5F /* 307.wav in Resources */,
 				151038171B93C0A2004BFEE1 /* 204.wav in Resources */,
 				151038141B93C0A2004BFEE1 /* 201.wav in Resources */,
 				1510381E1B93C0A2004BFEE1 /* 211.wav in Resources */,
+				159497AC1B980A5E00F13F5F /* 300.wav in Resources */,
 				1510381F1B93C0A2004BFEE1 /* 212.wav in Resources */,
 				151038241B93C0A2004BFEE1 /* 217.wav in Resources */,
 				79AACC631B840E78001C0F20 /* 101.wav in Resources */,
 				151038161B93C0A2004BFEE1 /* 203 .wav in Resources */,
 				151038131B93C0A2004BFEE1 /* 200.wav in Resources */,
+				159497B11B980A5E00F13F5F /* 305.wav in Resources */,
 				791B34B61B83A1ED000505CD /* Main.storyboard in Resources */,
+				159497AF1B980A5E00F13F5F /* 303.wav in Resources */,
 				1510382A1B93C0A2004BFEE1 /* 223.wav in Resources */,
 				79AACC651B840E78001C0F20 /* 103.wav in Resources */,
 				7952D1CE1B8404EF002896BB /* logo-small.jpg in Resources */,
+				159497B61B980A5E00F13F5F /* 310.wav in Resources */,
 				79AACC691B840E78001C0F20 /* 107.wav in Resources */,
 				79AACC641B840E78001C0F20 /* 102.wav in Resources */,
 				151038261B93C0A2004BFEE1 /* 219.wav in Resources */,
