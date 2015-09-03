@@ -15,7 +15,7 @@ var feedbackYouPickedLoop = AVAudioPlayer()
 var i = 0
 var k = 0
 var gameCompleted = true
-var levelPassed = true // to evaluate if user allowed to move onto next level
+var levelPassed = false // to evaluate if user allowed to move onto next level
 
 
 let chordList1 = [[0, "G", "V-I-IV", "D-G-C", 5140], [1, "D", "I-IV-V", "D-G-A", 1450], [2, "D", "I-V-I", "D-A-D", 1510], [3, "D", "I-V-IV", "D-A-G", 1540], [4, "G", "I-IV-V", "G-C-D", 1450], [5, "G", "I-V-IV", "G-D-C", 1540], [6, "G", "IV-I-V", "C-G-D", 4150], [7, "G", "IV-V-I", "C-D-G", 4510]]
@@ -41,6 +41,7 @@ var loopsAtEachLevel:[Int] = [8, 24, 11]
 var songFileCounterAtEachLevel:[Int] = [100, 200, 300]
 var wavNumber = 100
 var chordListX = chordList1 // we will increment this upon level up
+
 
 
 
@@ -84,7 +85,8 @@ class ViewController: UIViewController {
     
     
     @IBAction func playChord(sender: AnyObject) {
-       
+        print("let's see where level passed stands")
+        print(levelPassed)
         if (gameCompleted == true) {
             let o = UInt32(loopsAtEachLevel[level]) // pick a random number among the loops for a given level
             i = Int(arc4random_uniform(o)) // i will be a random number from 0 to 7 at Level 2
@@ -97,6 +99,20 @@ class ViewController: UIViewController {
         print(" ======= ")
         print(i)
         
+        
+        if levelPassed == true {
+            print("level PASSED!!")
+            endOfLevelButtonLabel.setTitle("", forState: UIControlState.Normal)
+            levelWinLoseMessage.text = ""
+
+
+            points = 0
+            plays = 0
+            levelPassed = false
+            print(levelPassed)
+        }
+        
+        
         practiceButton.setTitle("", forState: UIControlState.Normal)
         closeButton.setTitle("X", forState: UIControlState.Normal)
         score.text = "\(points) | \(plays)"
@@ -108,6 +124,7 @@ class ViewController: UIViewController {
         feedbackLoopWas.setTitle("", forState: UIControlState.Normal)
         feedbackYouPicked.setTitle("", forState: UIControlState.Normal)
         feedbackSoundsLike.setTitle("", forState: UIControlState.Normal)
+        
         
         
         // play the chord 
@@ -363,6 +380,8 @@ class ViewController: UIViewController {
         choice2Label.setTitle("", forState: UIControlState.Normal)
         choice3Label.setTitle("", forState: UIControlState.Normal)
         choice4Label.setTitle("", forState: UIControlState.Normal)
+        levelIndicator.text = ""
+        level = 0
 
 
 
@@ -436,6 +455,7 @@ class ViewController: UIViewController {
     
     // evaluate if the level is over, respond accordingly
     if plays == 3 {
+        print("yo! i'm in the wrong place")
         if points > 1 {
             levelWinLoseMessage.text = "Congrats! You passed level \(level + 1)"
             if (level == 2) {
@@ -443,7 +463,12 @@ class ViewController: UIViewController {
             } else {
            // endOfLevelButtonLabel.setTitle("Play Level \(level + 2)", forState: UIControlState.Normal)
             levelPassed = true
+            print(levelPassed)
             level++
+            playButton.setTitle("Play Level \(level + 1) Chords", forState: UIControlState.Normal)
+
+            
+
 
             chordListXSequences.removeAll()
             
