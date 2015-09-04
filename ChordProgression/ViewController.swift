@@ -402,6 +402,12 @@ class ViewController: UIViewController {
     
 
   func submittedGuess(sender: AnyObject) {
+        self.choice1Label.hidden = true
+        self.choice2Label.hidden = true
+        self.choice3Label.hidden = true
+        self.choice4Label.hidden = true
+    
+    
         if userGuessed != "" {
             
             if userGuessed == chordListX[i][2] {
@@ -412,6 +418,9 @@ class ViewController: UIViewController {
             } else {
                 correctIncorrect.text = ":("
                 plays++
+                
+               
+
                 
                 
                 feedbackLoopWas.setTitle("The loop was: \(chordListX[i][2])", forState: UIControlState.Normal)
@@ -442,9 +451,9 @@ class ViewController: UIViewController {
             }
             score.text = "\(points) | \(plays)"
             
-            key.text = "Key of: \(chordListX[i][1])"
-            progression.text = "Type of Progression: \(chordListX[i][2])"
-            chordsPlayed.text = "Chords Played: \(chordListX[i][3])"
+            key.text = ""
+            progression.text = "The progression was \(chordListX[i][2])"
+            chordsPlayed.text = "(\(chordListX[i][3]) in the key of \(chordListX[i][1]))"
             gameCompleted = true
             playButton.setTitle("Play Chords", forState: UIControlState.Normal)
 
