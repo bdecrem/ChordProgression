@@ -76,6 +76,10 @@ class ViewController: UIViewController {
     @IBOutlet var levelIndicator: UILabel!
     
     
+    
+
+    
+    
     //
     // THE MAIN LOOP STARTS HERE //
     //
@@ -112,8 +116,12 @@ class ViewController: UIViewController {
             print(levelPassed)
         }
         
+        self.practiceButton.hidden = true
+        self.choice1Label.hidden = false
+        self.choice2Label.hidden = false
+        self.choice3Label.hidden = false
+        self.choice4Label.hidden = false
         
-        practiceButton.setTitle("", forState: UIControlState.Normal)
         closeButton.setTitle("X", forState: UIControlState.Normal)
         score.text = "\(points) | \(plays)"
         levelIndicator.text = "Level \(level + 1)"
@@ -376,10 +384,10 @@ class ViewController: UIViewController {
         practiceButton.setTitle("Practice", forState: UIControlState.Normal)
         closeButton.setTitle("", forState: UIControlState.Normal)
         score.text = ""
-        choice1Label.setTitle("", forState: UIControlState.Normal)
-        choice2Label.setTitle("", forState: UIControlState.Normal)
-        choice3Label.setTitle("", forState: UIControlState.Normal)
-        choice4Label.setTitle("", forState: UIControlState.Normal)
+        self.choice1Label.hidden = true
+        self.choice2Label.hidden = true
+        self.choice3Label.hidden = true
+        self.choice4Label.hidden = true
         levelIndicator.text = ""
         level = 0
 
@@ -503,7 +511,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.choice1Label.hidden = true
+        self.choice2Label.hidden = true
+        self.choice3Label.hidden = true
+        self.choice4Label.hidden = true
+
         
         
     }

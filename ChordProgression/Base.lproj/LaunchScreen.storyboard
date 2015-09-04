@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,14 +17,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-small.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="2fe-IF-g33">
-                                <rect key="frame" x="150" y="159" width="300" height="282"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo-3.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="2fe-IF-g33">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Chord Pro" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9kZ-Nc-Oci">
+                                <rect key="frame" x="206" y="258" width="188" height="83"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="35"/>
+                                <color key="textColor" red="1" green="0.82326828816058228" blue="0.076701729019702736" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="2fe-IF-g33" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="iUt-UJ-pkH"/>
-                            <constraint firstItem="2fe-IF-g33" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="yha-Kk-zn5"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="2fe-IF-g33" secondAttribute="bottom" id="0Rt-o9-DSg"/>
+                            <constraint firstItem="9kZ-Nc-Oci" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="6d9-mR-WHq"/>
+                            <constraint firstItem="2fe-IF-g33" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" id="AuD-Hk-jwr"/>
+                            <constraint firstItem="9kZ-Nc-Oci" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="eaN-qM-wXB"/>
+                            <constraint firstItem="2fe-IF-g33" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-20" id="lZc-ui-d3W"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2fe-IF-g33" secondAttribute="trailing" constant="-20" id="rrT-pX-4TT"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -33,6 +44,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logo-small.jpg" width="300" height="282"/>
+        <image name="photo-3.jpg" width="469" height="847"/>
     </resources>
 </document>
