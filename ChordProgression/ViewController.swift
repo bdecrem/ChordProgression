@@ -280,7 +280,22 @@ class ViewController: UIViewController {
     // when user presses the X button
     
     @IBAction func closeButtonPressed(sender: AnyObject) {
-        newGame("X Pressed")
+        
+        let endGameAlert = UIAlertController(title: "", message: "This will end your game.", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        endGameAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action: UIAlertAction!) in
+            print("Handle Ok logic here")
+            self.newGame("X Pressed")
+            
+        }))
+        
+        endGameAlert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (action: UIAlertAction!) in
+            print("Handle Cancel Logic here")
+        }))
+        
+        presentViewController(endGameAlert, animated: true, completion: nil)
+        
+        
         
     
     }
@@ -381,7 +396,7 @@ class ViewController: UIViewController {
         points = 0
         plays = 0
         score.text = "\(points) | \(plays)"
-        practiceButton.setTitle("Practice", forState: UIControlState.Normal)
+        self.practiceButton.hidden = false
         closeButton.setTitle("", forState: UIControlState.Normal)
         score.text = ""
         self.choice1Label.hidden = true
