@@ -53,7 +53,10 @@ var chordListX = chordList1 // we will increment this upon level up
 
 class ViewController: UIViewController {
    
+    @IBOutlet var spacerH: UIButton!
+    @IBOutlet var repeatButton: UIButton!
     
+    @IBOutlet var repeatIcon: UIImageView!
     @IBOutlet var key: UILabel!
     @IBOutlet var progression: UILabel!
     @IBOutlet var chordsPlayed: UILabel!
@@ -75,6 +78,7 @@ class ViewController: UIViewController {
     @IBOutlet var closeButton: UIButton!
     @IBOutlet var levelIndicator: UILabel!
     
+    @IBOutlet var appName: UILabel!
     
     
 
@@ -121,6 +125,9 @@ class ViewController: UIViewController {
         self.choice2Label.hidden = false
         self.choice3Label.hidden = false
         self.choice4Label.hidden = false
+        self.appName.hidden = true
+        self.repeatButton.hidden = false
+        self.repeatIcon.hidden = false
         
         closeButton.setTitle("X", forState: UIControlState.Normal)
         score.text = "\(points) | \(plays)"
@@ -539,6 +546,10 @@ class ViewController: UIViewController {
         self.choice2Label.hidden = true
         self.choice3Label.hidden = true
         self.choice4Label.hidden = true
+        self.repeatButton.hidden = true
+        self.repeatIcon.hidden = true
+        self.spacerH.hidden = true
+        
 
         
         
