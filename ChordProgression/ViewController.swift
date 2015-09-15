@@ -56,7 +56,6 @@ class ViewController: UIViewController {
     @IBOutlet var spacerH: UIButton!
     @IBOutlet var repeatButton: UIButton!
     
-    @IBOutlet var repeatIcon: UIImageView!
     @IBOutlet var key: UILabel!
     @IBOutlet var progression: UILabel!
     @IBOutlet var chordsPlayed: UILabel!
@@ -77,6 +76,7 @@ class ViewController: UIViewController {
     @IBOutlet var practiceButton: UIButton!
     @IBOutlet var closeButton: UIButton!
     @IBOutlet var levelIndicator: UILabel!
+    @IBOutlet var scoreLabelOnly: UILabel!
     
     @IBOutlet var appName: UILabel!
     
@@ -127,10 +127,14 @@ class ViewController: UIViewController {
         self.choice4Label.hidden = false
         self.appName.hidden = true
         self.repeatButton.hidden = false
-        self.repeatIcon.hidden = false
+        self.closeButton.hidden = false
+        self.levelIndicator.hidden = false
+        self.scoreLabelOnly.hidden = false
+        self.score.hidden = false
         
-        closeButton.setTitle("X", forState: UIControlState.Normal)
-        score.text = "\(points) | \(plays)"
+
+        
+        score.text = "\(points) / \(plays)"
         levelIndicator.text = "Level \(level + 1)"
         correctIncorrect.text = ""
         key.text = ""
@@ -402,14 +406,15 @@ class ViewController: UIViewController {
         feedbackYouPicked.setTitle("", forState: UIControlState.Normal)
         points = 0
         plays = 0
-        score.text = "\(points) | \(plays)"
+        score.text = "\(points) / \(plays)"
         self.practiceButton.hidden = false
-        closeButton.setTitle("", forState: UIControlState.Normal)
+        self.closeButton.hidden = true
         score.text = ""
         self.choice1Label.hidden = true
         self.choice2Label.hidden = true
         self.choice3Label.hidden = true
         self.choice4Label.hidden = true
+        self.repeatButton.hidden = true
         levelIndicator.text = ""
         level = 0
 
@@ -547,7 +552,13 @@ class ViewController: UIViewController {
         self.choice3Label.hidden = true
         self.choice4Label.hidden = true
         self.repeatButton.hidden = true
-        self.repeatIcon.hidden = true
+        self.closeButton.hidden = true
+        self.levelIndicator.hidden = true
+        self.scoreLabelOnly.hidden = true
+        self.score.hidden = true
+        
+        
+        
         self.spacerH.hidden = true
         
 
