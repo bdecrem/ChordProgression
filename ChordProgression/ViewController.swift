@@ -120,6 +120,11 @@ class ViewController: UIViewController {
             print(levelPassed)
         }
         
+        self.repeatButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Fill
+        self.repeatButton.contentVerticalAlignment = UIControlContentVerticalAlignment.Fill
+        self.repeatButton.imageView?.contentMode = UIViewContentMode.ScaleAspectFit
+
+        
         self.practiceButton.hidden = true
         self.choice1Label.hidden = false
         self.choice2Label.hidden = false
@@ -476,7 +481,7 @@ class ViewController: UIViewController {
 
                 
             }
-            score.text = "\(points) | \(plays)"
+            score.text = "\(points) / \(plays)"
             
             key.text = ""
             progression.text = "The progression was \(chordListX[i][2])"
