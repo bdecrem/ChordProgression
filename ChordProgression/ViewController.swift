@@ -20,7 +20,7 @@ var levelPassed = false // to evaluate if user allowed to move onto next level
 
 let chordList1 = [[0, "G", "V-I-IV", "D-G-C", 5140], [1, "D", "I-IV-V", "D-G-A", 1450], [2, "D", "I-V-I", "D-A-D", 1510], [3, "D", "I-V-IV", "D-A-G", 1540], [4, "G", "I-IV-V", "G-C-D", 1450], [5, "G", "I-V-IV", "G-D-C", 1540], [6, "G", "IV-I-V", "C-G-D", 4150], [7, "G", "IV-V-I", "C-D-G", 4510]]
 
-let chordList2 = [[0, "A", "I-IV-I-V-IV", "A—D-A-E-D"], [1, "A", "I-IV-V", "Ahi-D-E (powerchord)"], [2, "A", "I-V-IV", "A—E-D"], [3, "A", "I-V-IV-I-V", "A-E-D-A-E"], [4, "A", "I-V-IV-V", "A-E-D-E"], [5, "C", "I-IV-V", "C-Fhi-G"], [6, "C", "I-IV-V", "C-F-G"], [7, "C", "I-IV-V", "Chi—F-G (powerchord)"], [8, "C", "I-V-IV", "Chi-G-F"], [9, "C", "I-V-IV", "C-G-F"], [10, "D", "I-IV-V", "D-G-A (powerchord)"], [11, "D", "I-IV-V", "Dhi-G-A"], [12, "D", "I-V-IV-IV", "D-A-G-G"], [13, "D", "I-V-IV", "D-A-G"], [14, "D", "I-V-I-IV", "Dhi-A-Dhi-G"], [15, "E", "I-IV-I-V-IV", "E-A-E-B-A (powerchord)"], [16, "E", "I-IV-V-IV", "E-A-B-A"], [17, "E", "I-V-IV", "E-B-A"], [18, "E", "I-V-IV", "Ehi-B-A (powerchord)"], [19, "G", "I-IV-V", "G-C-D"], [20, "G", "I-IV-V", "G-C-D (powerchord)"], [21, "G", "I-IV-V", "Ghi-C-D"], [22, "G", "I-V-IV", "G-D-C"], [23, "G", "I-V-IV-V", "G-D-C-D"]]
+let chordList2 = [[0, "A", "I-IV-I-V-IV", "A—D-A-E-D"], [1, "A", "I-IV-V", "Ahi-D-E (PC)"], [2, "A", "I-V-IV", "A—E-D"], [3, "A", "I-V-IV-I-V", "A-E-D-A-E"], [4, "A", "I-V-IV-V", "A-E-D-E"], [5, "C", "I-IV-V", "C-Fhi-G"], [6, "C", "I-IV-V", "C-F-G"], [7, "C", "I-IV-V", "Chi—F-G (PC)"], [8, "C", "I-V-IV", "Chi-G-F"], [9, "C", "I-V-IV", "C-G-F"], [10, "D", "I-IV-V", "D-G-A (PC)"], [11, "D", "I-IV-V", "Dhi-G-A"], [12, "D", "I-V-IV-IV", "D-A-G-G"], [13, "D", "I-V-IV", "D-A-G"], [14, "D", "I-V-I-IV", "Dhi-A-Dhi-G"], [15, "E", "I-IV-I-V-IV", "E-A-E-B-A (PC)"], [16, "E", "I-IV-V-IV", "E-A-B-A"], [17, "E", "I-V-IV", "E-B-A"], [18, "E", "I-V-IV", "Ehi-B-A (PC)"], [19, "G", "I-IV-V", "G-C-D"], [20, "G", "I-IV-V", "G-C-D (PC)"], [21, "G", "I-IV-V", "Ghi-C-D"], [22, "G", "I-V-IV", "G-D-C"], [23, "G", "I-V-IV-V", "G-D-C-D"]]
 
 let chordList3 = [[0, "A", "IV-V-I-I", "D-E-A-A"],  [1, "A", "V-I-IV-V", "E-A-D-E"], [2, "A", "V-vi-I-I",  "E-f#m-A-A"], [3, "A",  "vi-IV-I", "f#m-D-A"], [4, "C", "I-IV-V", "C-F-G"], [5, "C", "I-IV-vi-V", "C-F-am-G"], [6, "C", "I-V-vi-IV", "C-G-am-F"], [7, "C", "V-IV-V-I", "G-F-G-C"], [8, "C", "V-vi-i-i", "G-am-C-C"], [9, "C", "vi-I-V-vi", "am-C-G-am"], [10, "C", "vi-I-vi-V", "am-C-am-G"]]
 
@@ -41,6 +41,11 @@ var loopsAtEachLevel:[Int] = [8, 24, 11]
 var songFileCounterAtEachLevel:[Int] = [100, 200, 300]
 var wavNumber = 100
 var chordListX = chordList1 // we will increment this upon level up
+let playButtonBlueImage = UIImage(named: "bg_btn-blue@3x.png") as UIImage?
+let playButtonRedImage = UIImage(named: "bg_btn-red@3x.png") as UIImage?
+let smileySadImage = UIImage(named: "sadFaceBart4.png") as UIImage?
+let smileyHappyImage = UIImage(named: "smileyBart.png") as UIImage?
+
 
 
 
@@ -345,6 +350,11 @@ class ViewController: UIViewController {
         
         presentViewController(endGameAlert, animated: true, completion: nil)
         
+        self.sadFace.hidden = true
+        
+        self.playButton.setBackgroundImage(playButtonRedImage, forState: .Normal)
+
+        
         
         
     
@@ -472,33 +482,30 @@ class ViewController: UIViewController {
         self.choice2Label.hidden = true
         self.choice3Label.hidden = true
         self.choice4Label.hidden = true
-    
+        self.repeatButton.hidden = true
+        self.scoreLabelOnly.hidden = true
+        self.score.hidden = true
+        self.chordsPlayed.hidden = false
+        feedbackLoopWas.setTitle("The progression was \(chordListX[i][2])", forState: UIControlState.Normal)
+        chordsPlayed.text = "(\(chordListX[i][3]) in the key of \(chordListX[i][1]))"
+
+
     
         if userGuessed != "" {
             
             if userGuessed == chordListX[i][2] {
-                self.repeatButton.hidden = true
-                correctIncorrect.text = "Correct!"
+                self.sadFace.image = smileyHappyImage
+                self.sadFace.hidden = false
                 points++
                 plays++
-                progression.text = "The progression was \(chordListX[i][2])"
-                chordsPlayed.text = "(\(chordListX[i][3]) in the key of \(chordListX[i][1]))"
-
 
                 
             } else {
+                self.sadFace.image = smileySadImage
                 self.sadFace.hidden = false
-                self.scoreLabelOnly.hidden = true
-                self.score.hidden = true
-                self.repeatButton.hidden = true
-                
                 plays++
-                self.chordsPlayed.hidden = false
                 
-                feedbackLoopWas.setTitle("The progression was \(chordListX[i][2])", forState: UIControlState.Normal)
-                chordsPlayed.text = "(\(chordListX[i][3]) in the key of \(chordListX[i][1]))"
-                print(chordsPlayed.text)
-
+ 
                 
                 //looking for the first loop in the set that is of the type the user guessed
                 
@@ -528,6 +535,7 @@ class ViewController: UIViewController {
             
             key.text = ""
             gameCompleted = true
+            self.playButton.setBackgroundImage(playButtonBlueImage, forState: .Normal)
             playButton.setTitle("Play Chords", forState: UIControlState.Normal)
 
             
@@ -545,11 +553,12 @@ class ViewController: UIViewController {
     
     // evaluate if the level is over, respond accordingly
     if plays == 3 {
-        print("yo! i'm in the wrong place")
         if points > 1 {
-            levelWinLoseMessage.text = "Congrats! You passed level \(level + 1)"
+            self.sadFace.image = smileyHappyImage
+            levelWinLoseMessage.text = "Level \(level + 1) passed!"
             if (level == 2) {
-                endOfLevelButtonLabel.setTitle("You've completed the game!", forState: UIControlState.Normal)
+                levelWinLoseMessage.text = "Game completed!"
+                self.playButton.hidden = true
             } else {
            // endOfLevelButtonLabel.setTitle("Play Level \(level + 2)", forState: UIControlState.Normal)
             levelPassed = true
@@ -572,7 +581,8 @@ class ViewController: UIViewController {
             }
             
         } else {
-            levelWinLoseMessage.text = "Bummer. You didn't pass level 1"
+            self.sadFace.image = smileySadImage
+            levelWinLoseMessage.text = "Level failed."
             endOfLevelButtonLabel.setTitle("Try Again", forState: UIControlState.Normal)
             levelPassed = false
             level = 0
@@ -592,6 +602,9 @@ class ViewController: UIViewController {
     
     
     override func viewDidLoad() {
+        
+        
+        
         super.viewDidLoad()
         self.choice1Label.hidden = true
         self.choice2Label.hidden = true
