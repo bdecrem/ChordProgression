@@ -79,6 +79,7 @@ class ViewController: UIViewController {
     @IBOutlet var scoreLabelOnly: UILabel!
     
     @IBOutlet var appName: UILabel!
+    @IBOutlet var sadFace: UIImageView!
     
     
 
@@ -136,6 +137,7 @@ class ViewController: UIViewController {
         self.levelIndicator.hidden = false
         self.scoreLabelOnly.hidden = false
         self.score.hidden = false
+        self.sadFace.hidden = true
         
 
         
@@ -293,6 +295,38 @@ class ViewController: UIViewController {
     //
     
     
+    // repeat button
+    
+    @IBAction func repeatProgression(sender: AnyObject) {
+    
+        if let chordURL = NSBundle.mainBundle().URLForResource("\(wavNumber)", withExtension: "wav") {
+            
+            do {
+                
+                chord = try AVAudioPlayer(contentsOfURL: chordURL)
+                
+                
+                chord.numberOfLoops = 0
+                chord.play()
+                
+                
+                
+                
+            } catch _ {
+                return
+            }
+            
+        } else {
+            print("Unable to find audio file")
+        }
+
+    
+    }
+    
+    
+    
+    
+    
     // when user presses the X button
     
     @IBAction func closeButtonPressed(sender: AnyObject) {
@@ -443,19 +477,28 @@ class ViewController: UIViewController {
         if userGuessed != "" {
             
             if userGuessed == chordListX[i][2] {
+                self.repeatButton.hidden = true
                 correctIncorrect.text = "Correct!"
                 points++
                 plays++
-                
-            } else {
-                correctIncorrect.text = ":("
-                plays++
-                
-               
+                progression.text = "The progression was \(chordListX[i][2])"
+                chordsPlayed.text = "(\(chordListX[i][3]) in the key of \(chordListX[i][1]))"
+
 
                 
+            } else {
+                self.sadFace.hidden = false
+                self.scoreLabelOnly.hidden = true
+                self.score.hidden = true
+                self.repeatButton.hidden = true
                 
-                feedbackLoopWas.setTitle("The loop was: \(chordListX[i][2])", forState: UIControlState.Normal)
+                plays++
+                self.chordsPlayed.hidden = false
+                
+                feedbackLoopWas.setTitle("The progression was \(chordListX[i][2])", forState: UIControlState.Normal)
+                chordsPlayed.text = "(\(chordListX[i][3]) in the key of \(chordListX[i][1]))"
+                print(chordsPlayed.text)
+
                 
                 //looking for the first loop in the set that is of the type the user guessed
                 
@@ -474,7 +517,7 @@ class ViewController: UIViewController {
                 
                 
 
-                feedbackYouPicked.setTitle("Sample of the progression you chose: \(userGuessed)", forState: UIControlState.Normal)
+                feedbackYouPicked.setTitle("You picked: \(userGuessed)", forState: UIControlState.Normal)
                 
                 // we're not using feedbackSoundsLike for now at least - sitting around for future use
                 feedbackSoundsLike.setTitle("", forState: UIControlState.Normal)
@@ -484,8 +527,6 @@ class ViewController: UIViewController {
             score.text = "\(points) / \(plays)"
             
             key.text = ""
-            progression.text = "The progression was \(chordListX[i][2])"
-            chordsPlayed.text = "(\(chordListX[i][3]) in the key of \(chordListX[i][1]))"
             gameCompleted = true
             playButton.setTitle("Play Chords", forState: UIControlState.Normal)
 
@@ -561,6 +602,7 @@ class ViewController: UIViewController {
         self.levelIndicator.hidden = true
         self.scoreLabelOnly.hidden = true
         self.score.hidden = true
+        self.sadFace.hidden = true
         
         
         
