@@ -24,6 +24,8 @@ let chordList2 = [[0, "A", "I-IV-I-V-IV", "A—D-A-E-D"], [1, "A", "I-IV-V", "Ah
 
 let chordList3 = [[0, "A", "IV-V-I-I", "D-E-A-A"],  [1, "A", "V-I-IV-V", "E-A-D-E"], [2, "A", "V-vi-I-I",  "E-f#m-A-A"], [3, "A",  "vi-IV-I", "f#m-D-A"], [4, "C", "I-IV-V", "C-F-G"], [5, "C", "I-IV-vi-V", "C-F-am-G"], [6, "C", "I-V-vi-IV", "C-G-am-F"], [7, "C", "V-IV-V-I", "G-F-G-C"], [8, "C", "V-vi-i-i", "G-am-C-C"], [9, "C", "vi-I-V-vi", "am-C-G-am"], [10, "C", "vi-I-vi-V", "am-C-am-G"]]
 
+let chordList0 = [[1, "D", "I-IV-V", "D-G-A", 1450], [3, "D", "I-V-IV", "D-A-G", 1540], [4, "G", "I-IV-V", "G-C-D", 1450], [5, "G", "I-V-IV", "G-D-C", 1540]]
+
 
 let count1 = chordList1.count
 var chordListXSequences = [String]()
@@ -129,7 +131,7 @@ class ViewController: UIViewController {
         self.repeatButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Fill
         self.repeatButton.contentVerticalAlignment = UIControlContentVerticalAlignment.Fill
         self.repeatButton.imageView?.contentMode = UIViewContentMode.ScaleAspectFit
-
+        self.levelWinLoseMessage.hidden = true
         
         self.practiceButton.hidden = true
         self.choice1Label.hidden = false
@@ -353,6 +355,13 @@ class ViewController: UIViewController {
         self.sadFace.hidden = true
         
         self.playButton.setBackgroundImage(playButtonRedImage, forState: .Normal)
+        
+        self.appName.hidden = false
+        
+        self.scoreLabelOnly.hidden = true
+        
+        self.score.hidden = true
+
 
         
         
@@ -583,10 +592,14 @@ class ViewController: UIViewController {
         } else {
             self.sadFace.image = smileySadImage
             levelWinLoseMessage.text = "Level failed."
-            endOfLevelButtonLabel.setTitle("Try Again", forState: UIControlState.Normal)
+            endOfLevelButtonLabel.setTitle("", forState: UIControlState.Normal)
             levelPassed = false
             level = 0
             chordListX = chordList1
+            points = 0
+            plays = 0
+            playButton.setTitle("Start Over", forState: UIControlState.Normal)
+
         }
     
     }
