@@ -18,13 +18,15 @@ var gameCompleted = true
 var levelPassed = false // to evaluate if user allowed to move onto next level
 
 
-let chordList1 = [[0, "G", "V-I-IV", "D-G-C", 5140], [1, "D", "I-IV-V", "D-G-A", 1450], [2, "D", "I-V-I", "D-A-D", 1510], [3, "D", "I-V-IV", "D-A-G", 1540], [4, "G", "I-IV-V", "G-C-D", 1450], [5, "G", "I-V-IV", "G-D-C", 1540], [6, "G", "IV-I-V", "C-G-D", 4150], [7, "G", "IV-V-I", "C-D-G", 4510]]
+let chordList1 = [[0, "D", "I-IV-V", "D-G-A", 1450], [1, "D", "I-V-IV", "D-A-G", 1540], [2, "G", "I-IV-V", "G-C-D", 1450], [3, "G", "I-V-IV", "G-D-C", 1540]]
 
-let chordList2 = [[0, "A", "I-IV-I-V-IV", "A—D-A-E-D"], [1, "A", "I-IV-V", "Ahi-D-E (PC)"], [2, "A", "I-V-IV", "A—E-D"], [3, "A", "I-V-IV-I-V", "A-E-D-A-E"], [4, "A", "I-V-IV-V", "A-E-D-E"], [5, "C", "I-IV-V", "C-Fhi-G"], [6, "C", "I-IV-V", "C-F-G"], [7, "C", "I-IV-V", "Chi—F-G (PC)"], [8, "C", "I-V-IV", "Chi-G-F"], [9, "C", "I-V-IV", "C-G-F"], [10, "D", "I-IV-V", "D-G-A (PC)"], [11, "D", "I-IV-V", "Dhi-G-A"], [12, "D", "I-V-IV-IV", "D-A-G-G"], [13, "D", "I-V-IV", "D-A-G"], [14, "D", "I-V-I-IV", "Dhi-A-Dhi-G"], [15, "E", "I-IV-I-V-IV", "E-A-E-B-A (PC)"], [16, "E", "I-IV-V-IV", "E-A-B-A"], [17, "E", "I-V-IV", "E-B-A"], [18, "E", "I-V-IV", "Ehi-B-A (PC)"], [19, "G", "I-IV-V", "G-C-D"], [20, "G", "I-IV-V", "G-C-D (PC)"], [21, "G", "I-IV-V", "Ghi-C-D"], [22, "G", "I-V-IV", "G-D-C"], [23, "G", "I-V-IV-V", "G-D-C-D"]]
+let chordList2 = [[0, "G", "V-I-IV", "D-G-C", 5140], [1, "D", "I-IV-V", "D-G-A", 1450], [2, "D", "I-V-I", "D-A-D", 1510], [3, "D", "I-V-IV", "D-A-G", 1540], [4, "G", "I-IV-V", "G-C-D", 1450], [5, "G", "I-V-IV", "G-D-C", 1540], [6, "G", "IV-I-V", "C-G-D", 4150], [7, "G", "IV-V-I", "C-D-G", 4510]]
 
-let chordList3 = [[0, "A", "IV-V-I-I", "D-E-A-A"],  [1, "A", "V-I-IV-V", "E-A-D-E"], [2, "A", "V-vi-I-I",  "E-f#m-A-A"], [3, "A",  "vi-IV-I", "f#m-D-A"], [4, "C", "I-IV-V", "C-F-G"], [5, "C", "I-IV-vi-V", "C-F-am-G"], [6, "C", "I-V-vi-IV", "C-G-am-F"], [7, "C", "V-IV-V-I", "G-F-G-C"], [8, "C", "V-vi-i-i", "G-am-C-C"], [9, "C", "vi-I-V-vi", "am-C-G-am"], [10, "C", "vi-I-vi-V", "am-C-am-G"]]
+let chordList3 = [[0, "A", "I-IV-I-V-IV", "A—D-A-E-D"], [1, "A", "I-IV-V", "Ahi-D-E (PC)"], [2, "A", "I-V-IV", "A—E-D"], [3, "A", "I-V-IV-I-V", "A-E-D-A-E"], [4, "A", "I-V-IV-V", "A-E-D-E"], [5, "C", "I-IV-V", "C-Fhi-G"], [6, "C", "I-IV-V", "C-F-G"], [7, "C", "I-IV-V", "Chi—F-G (PC)"], [8, "C", "I-V-IV", "Chi-G-F"], [9, "C", "I-V-IV", "C-G-F"], [10, "D", "I-IV-V", "D-G-A (PC)"], [11, "D", "I-IV-V", "Dhi-G-A"], [12, "D", "I-V-IV-IV", "D-A-G-G"], [13, "D", "I-V-IV", "D-A-G"], [14, "D", "I-V-I-IV", "Dhi-A-Dhi-G"], [15, "E", "I-IV-I-V-IV", "E-A-E-B-A (PC)"], [16, "E", "I-IV-V-IV", "E-A-B-A"], [17, "E", "I-V-IV", "E-B-A"], [18, "E", "I-V-IV", "Ehi-B-A (PC)"], [19, "G", "I-IV-V", "G-C-D"], [20, "G", "I-IV-V", "G-C-D (PC)"], [21, "G", "I-IV-V", "Ghi-C-D"], [22, "G", "I-V-IV", "G-D-C"], [23, "G", "I-V-IV-V", "G-D-C-D"]]
 
-let chordList0 = [[1, "D", "I-IV-V", "D-G-A", 1450], [3, "D", "I-V-IV", "D-A-G", 1540], [4, "G", "I-IV-V", "G-C-D", 1450], [5, "G", "I-V-IV", "G-D-C", 1540]]
+let chordList4 = [[0, "A", "IV-V-I-I", "D-E-A-A"],  [1, "A", "V-I-IV-V", "E-A-D-E"], [2, "A", "V-vi-I-I",  "E-f#m-A-A"], [3, "A",  "vi-IV-I", "f#m-D-A"], [4, "C", "I-IV-V", "C-F-G"], [5, "C", "I-IV-vi-V", "C-F-am-G"], [6, "C", "I-V-vi-IV", "C-G-am-F"], [7, "C", "V-IV-V-I", "G-F-G-C"], [8, "C", "V-vi-i-i", "G-am-C-C"], [9, "C", "vi-I-V-vi", "am-C-G-am"], [10, "C", "vi-I-vi-V", "am-C-am-G"]]
+
+
 
 
 let count1 = chordList1.count
@@ -39,8 +41,8 @@ var points = 0
 var plays = 0
 var feedbackYouPickedSampleLoopNumber = Int()
 var level = 0  // we will increment this upon Level Up
-var loopsAtEachLevel:[Int] = [8, 24, 11]
-var songFileCounterAtEachLevel:[Int] = [100, 200, 300]
+var loopsAtEachLevel:[Int] = [4, 8, 24, 11]
+var songFileCounterAtEachLevel:[Int] = [000, 100, 200, 300]
 var wavNumber = 100
 var chordListX = chordList1 // we will increment this upon level up
 let playButtonBlueImage = UIImage(named: "bg_btn-blue@3x.png") as UIImage?
@@ -132,6 +134,7 @@ class ViewController: UIViewController {
         self.repeatButton.contentVerticalAlignment = UIControlContentVerticalAlignment.Fill
         self.repeatButton.imageView?.contentMode = UIViewContentMode.ScaleAspectFit
         self.levelWinLoseMessage.hidden = true
+        self.playButton.hidden = true
         
         self.practiceButton.hidden = true
         self.choice1Label.hidden = false
@@ -184,6 +187,18 @@ class ViewController: UIViewController {
         }
         
     if (gameCompleted == true) {
+        
+        if level == 0 {
+            print("first level")
+            choice3Label.setTitle("I-IV-V", forState: UIControlState.Normal)
+            choice4Label.setTitle("I-V-IV", forState: UIControlState.Normal)
+            self.choice1Label.hidden = true
+            self.choice2Label.hidden = true
+            option3 = "I-IV-V"
+            option4 = "I-V-IV"
+
+            
+        } else {
         
         //
         //This is my logic to create a new array that is just the list of unique Chord sequences in ChordListX
@@ -279,6 +294,7 @@ class ViewController: UIViewController {
             option2 = "\(randChord[1])"
             option3 = "\(randChord[2])"
         }
+        }
         
         // and turn the PLAY button into a PLAY AGAIN button
         
@@ -361,6 +377,9 @@ class ViewController: UIViewController {
         self.scoreLabelOnly.hidden = true
         
         self.score.hidden = true
+        
+        self.playButton.hidden = false
+        
 
 
         
@@ -546,6 +565,7 @@ class ViewController: UIViewController {
             gameCompleted = true
             self.playButton.setBackgroundImage(playButtonBlueImage, forState: .Normal)
             playButton.setTitle("Play Chords", forState: UIControlState.Normal)
+            self.playButton.hidden = false
 
             
         } else {
@@ -565,7 +585,8 @@ class ViewController: UIViewController {
         if points > 1 {
             self.sadFace.image = smileyHappyImage
             levelWinLoseMessage.text = "Level \(level + 1) passed!"
-            if (level == 2) {
+            if (level == 3) {
+                levelWinLoseMessage.hidden = false
                 levelWinLoseMessage.text = "Game completed!"
                 self.playButton.hidden = true
             } else {

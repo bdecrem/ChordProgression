@@ -34,6 +34,10 @@
 		153F934E1B96B67800B4BECD /* PracticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153F934D1B96B67800B4BECD /* PracticeViewController.swift */; };
 		15563C471B992C61002FF22E /* photo-2.jp in Resources */ = {isa = PBXBuildFile; fileRef = 15563C461B992C61002FF22E /* photo-2.jp */; };
 		15563C491B992D0B002FF22E /* photo-3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 15563C481B992D0B002FF22E /* photo-3.jpg */; };
+		1567B91E1BAA6B3900F736A9 /* 0.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1567B91A1BAA6B3900F736A9 /* 0.wav */; };
+		1567B91F1BAA6B3900F736A9 /* 1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1567B91B1BAA6B3900F736A9 /* 1.wav */; };
+		1567B9201BAA6B3900F736A9 /* 2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1567B91C1BAA6B3900F736A9 /* 2.wav */; };
+		1567B9211BAA6B3900F736A9 /* 3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1567B91D1BAA6B3900F736A9 /* 3.wav */; };
 		158E3E8C1B99732C000F8AA6 /* photo-lightened.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 158E3E8B1B99732C000F8AA6 /* photo-lightened.jpg */; };
 		159497AC1B980A5E00F13F5F /* 300.wav in Resources */ = {isa = PBXBuildFile; fileRef = 159497A11B980A5E00F13F5F /* 300.wav */; };
 		159497AD1B980A5E00F13F5F /* 301.wav in Resources */ = {isa = PBXBuildFile; fileRef = 159497A21B980A5E00F13F5F /* 301.wav */; };
@@ -110,6 +114,10 @@
 		153F934D1B96B67800B4BECD /* PracticeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PracticeViewController.swift; sourceTree = "<group>"; };
 		15563C461B992C61002FF22E /* photo-2.jp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "photo-2.jp"; sourceTree = "<group>"; };
 		15563C481B992D0B002FF22E /* photo-3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "photo-3.jpg"; sourceTree = "<group>"; };
+		1567B91A1BAA6B3900F736A9 /* 0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 0.wav; sourceTree = "<group>"; };
+		1567B91B1BAA6B3900F736A9 /* 1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 1.wav; sourceTree = "<group>"; };
+		1567B91C1BAA6B3900F736A9 /* 2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 2.wav; sourceTree = "<group>"; };
+		1567B91D1BAA6B3900F736A9 /* 3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 3.wav; sourceTree = "<group>"; };
 		158E3E8B1B99732C000F8AA6 /* photo-lightened.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "photo-lightened.jpg"; sourceTree = "<group>"; };
 		159497A11B980A5E00F13F5F /* 300.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 300.wav; sourceTree = "<group>"; };
 		159497A21B980A5E00F13F5F /* 301.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 301.wav; sourceTree = "<group>"; };
@@ -211,6 +219,10 @@
 		793B5DD91BA34809003F75E0 /* audio-files */ = {
 			isa = PBXGroup;
 			children = (
+				1567B91A1BAA6B3900F736A9 /* 0.wav */,
+				1567B91B1BAA6B3900F736A9 /* 1.wav */,
+				1567B91C1BAA6B3900F736A9 /* 2.wav */,
+				1567B91D1BAA6B3900F736A9 /* 3.wav */,
 				79AACC5B1B840E78001C0F20 /* 101.wav */,
 				79AACC5C1B840E78001C0F20 /* 102.wav */,
 				79AACC5D1B840E78001C0F20 /* 103.wav */,
@@ -344,8 +356,10 @@
 			files = (
 				159497B21B980A5E00F13F5F /* 306.wav in Resources */,
 				159497B01B980A5E00F13F5F /* 304.wav in Resources */,
+				1567B9201BAA6B3900F736A9 /* 2.wav in Resources */,
 				797CEF031BA35C6900281DB6 /* bg_btn-red@2x.png in Resources */,
 				79D064361BAA039E00A3AE97 /* smiley3x.png in Resources */,
+				1567B91F1BAA6B3900F736A9 /* 1.wav in Resources */,
 				159497AE1B980A5E00F13F5F /* 302.wav in Resources */,
 				15563C471B992C61002FF22E /* photo-2.jp in Resources */,
 				79D0643C1BAA156300A3AE97 /* sadFaceBart3.png in Resources */,
@@ -367,11 +381,13 @@
 				151038151B93C0A2004BFEE1 /* 202.wav in Resources */,
 				797CEF041BA35C6900281DB6 /* bg_btn-red@3x.png in Resources */,
 				151038291B93C0A2004BFEE1 /* 222.wav in Resources */,
+				1567B9211BAA6B3900F736A9 /* 3.wav in Resources */,
 				79AACC671B840E78001C0F20 /* 105.wav in Resources */,
 				151038201B93C0A2004BFEE1 /* 213.wav in Resources */,
 				151038231B93C0A2004BFEE1 /* 216.wav in Resources */,
 				79A08D9E1BA89BD000694819 /* bigRepeat.png in Resources */,
 				1510381B1B93C0A2004BFEE1 /* 208.wav in Resources */,
+				1567B91E1BAA6B3900F736A9 /* 0.wav in Resources */,
 				159497B41B980A5E00F13F5F /* 308.wav in Resources */,
 				791B34B81B83A1ED000505CD /* Assets.xcassets in Resources */,
 				151038281B93C0A2004BFEE1 /* 221.wav in Resources */,
