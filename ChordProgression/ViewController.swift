@@ -47,8 +47,8 @@ var wavNumber = 100
 var chordListX = chordList1 // we will increment this upon level up
 let playButtonBlueImage = UIImage(named: "bg_btn-blue@3x.png") as UIImage?
 let playButtonRedImage = UIImage(named: "bg_btn-red@3x.png") as UIImage?
-let smileySadImage = UIImage(named: "sadFaceBart4.png") as UIImage?
-let smileyHappyImage = UIImage(named: "smileyBart.png") as UIImage?
+let smileySadImage = UIImage(named: "newico_game-over.png") as UIImage?
+let smileyHappyImage = UIImage(named: "newico_correct.png") as UIImage?
 
 
 

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -55,6 +55,7 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="sAM-yn-LSf"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="23"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="-5" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Play Chords" backgroundImage="bg_btn-red.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -224,6 +225,7 @@
                                     <constraint firstAttribute="width" constant="266" id="pep-5S-nLH"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="23"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="-5" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Practice" backgroundImage="bg_btn-blue.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
@@ -245,7 +247,7 @@
                                     <constraint firstAttribute="height" constant="20" id="bAH-at-BgK"/>
                                     <constraint firstAttribute="width" constant="45" id="gGe-Cy-BoF"/>
                                 </constraints>
-                                <state key="normal" image="bigClose.png">
+                                <state key="normal" image="newico_close.png">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <variation key="default">
@@ -342,7 +344,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="bottomLeft" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r3e-ay-j2W">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r3e-ay-j2W">
                                 <rect key="frame" x="212" y="274" width="169" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="IFQ-DM-JsL"/>
@@ -350,7 +352,9 @@
                                     <constraint firstAttribute="height" constant="30" id="kGN-MN-ax3"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="OpenSans-CondensedBold" family="Open Sans Condensed" pointSize="27"/>
-                                <state key="normal" title=" repeat" image="RepeatBart.png">
+                                <inset key="titleEdgeInsets" minX="45" minY="-10" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title=" repeat" image="newico_repeat.png">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
@@ -378,7 +382,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="sadFaceBart4.png" translatesAutoresizingMaskIntoConstraints="NO" id="XQj-4z-iNv">
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="newico_game-over.png" translatesAutoresizingMaskIntoConstraints="NO" id="XQj-4z-iNv">
                                 <rect key="frame" x="212" y="211" width="131" height="68"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="360" id="Ghl-8D-Zjr"/>
@@ -792,7 +796,7 @@
                                     <constraint firstAttribute="width" constant="20" id="TkC-zn-5kn"/>
                                     <constraint firstAttribute="height" constant="20" id="X7W-C0-Uqg"/>
                                 </constraints>
-                                <state key="normal" image="bigClose.png"/>
+                                <state key="normal" image="newico_close.png"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="WYX-m1-BOJ"/>
                                 </connections>
@@ -810,6 +814,7 @@
                             <constraint firstItem="3If-B8-GEc" firstAttribute="top" secondItem="8dq-Zj-fK5" secondAttribute="bottom" constant="40" id="KNS-r9-yW0"/>
                             <constraint firstItem="Pfp-Im-6a7" firstAttribute="top" secondItem="3If-B8-GEc" secondAttribute="bottom" constant="16" id="KP6-Ml-3d6"/>
                             <constraint firstItem="3If-B8-GEc" firstAttribute="top" secondItem="8dq-Zj-fK5" secondAttribute="bottom" constant="40" id="Kjb-lr-GrX"/>
+                            <constraint firstItem="F4Y-gm-aqC" firstAttribute="centerY" secondItem="8dq-Zj-fK5" secondAttribute="centerY" id="LQT-Ef-CGs"/>
                             <constraint firstItem="8dq-Zj-fK5" firstAttribute="centerX" secondItem="2GT-kN-NTe" secondAttribute="centerX" id="Lx5-Ba-4If"/>
                             <constraint firstItem="Pfp-Im-6a7" firstAttribute="top" secondItem="3If-B8-GEc" secondAttribute="bottom" constant="16" id="Q5C-7U-53a"/>
                             <constraint firstItem="3If-B8-GEc" firstAttribute="top" secondItem="8dq-Zj-fK5" secondAttribute="bottom" constant="40" id="Rgq-NH-VvM"/>
@@ -822,7 +827,7 @@
                             <constraint firstItem="RB8-Uk-tXm" firstAttribute="centerX" secondItem="2GT-kN-NTe" secondAttribute="centerX" id="fqo-8J-MCs"/>
                             <constraint firstItem="F4Y-gm-aqC" firstAttribute="centerY" secondItem="8dq-Zj-fK5" secondAttribute="centerY" id="gxI-ne-0va"/>
                             <constraint firstItem="3If-B8-GEc" firstAttribute="top" secondItem="8dq-Zj-fK5" secondAttribute="bottom" constant="40" id="nHy-6e-ovW"/>
-                            <constraint firstItem="3If-B8-GEc" firstAttribute="top" secondItem="8dq-Zj-fK5" secondAttribute="bottom" constant="40" id="nxB-26-roo"/>
+                            <constraint firstItem="3If-B8-GEc" firstAttribute="top" secondItem="8dq-Zj-fK5" secondAttribute="bottom" constant="100" id="nxB-26-roo"/>
                             <constraint firstItem="F4Y-gm-aqC" firstAttribute="top" secondItem="8dq-Zj-fK5" secondAttribute="top" id="p58-tn-Pkh"/>
                             <constraint firstItem="Pfp-Im-6a7" firstAttribute="top" secondItem="3If-B8-GEc" secondAttribute="bottom" constant="16" id="qa0-Ki-CSa"/>
                             <constraint firstItem="8dq-Zj-fK5" firstAttribute="top" secondItem="Y3e-zH-GHB" secondAttribute="bottom" constant="20" id="sNQ-Qq-QqT"/>
@@ -842,6 +847,7 @@
                                 <exclude reference="qa0-Ki-CSa"/>
                                 <exclude reference="Zih-mP-Rbf"/>
                                 <exclude reference="zYi-pK-E3C"/>
+                                <exclude reference="9Qo-JK-paz"/>
                                 <exclude reference="E04-ib-vZw"/>
                                 <exclude reference="Wkr-oe-qhr"/>
                                 <exclude reference="gxI-ne-0va"/>
@@ -857,11 +863,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="RepeatBart.png" width="66" height="72"/>
         <image name="bg_btn-blue.png" width="133" height="34"/>
         <image name="bg_btn-red.png" width="133" height="34"/>
         <image name="bg_btn-red@3x.png" width="399" height="102"/>
-        <image name="bigClose.png" width="36" height="36"/>
-        <image name="sadFaceBart4.png" width="120" height="120"/>
+        <image name="newico_close.png" width="24" height="24"/>
+        <image name="newico_game-over.png" width="110" height="110"/>
+        <image name="newico_repeat.png" width="22" height="24"/>
     </resources>
 </document>
