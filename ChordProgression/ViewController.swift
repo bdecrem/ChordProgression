@@ -655,7 +655,7 @@ class ViewController: UIViewController {
         
         self.spacerH.hidden = true
         
-
+// no more hackety hack
         
         
     }
