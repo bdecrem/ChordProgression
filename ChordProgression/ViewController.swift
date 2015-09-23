@@ -50,6 +50,7 @@ let playButtonRedImage = UIImage(named: "bg_btn-red@3x.png") as UIImage?
 let smileySadImage = UIImage(named: "newico_game-over.png") as UIImage?
 let smileyHappyImage = UIImage(named: "newico_correct.png") as UIImage?
 
+let screenSize: CGRect = UIScreen.mainScreen().bounds
 
 
 
@@ -652,10 +653,84 @@ class ViewController: UIViewController {
         self.sadFace.hidden = true
         
         
-        
         self.spacerH.hidden = true
-        
 
+//
+//   layout code for older iPhones
+//
+        
+        let screenWidth = screenSize.width
+        let screenHeight = screenSize.height
+        print(screenWidth)
+        print(screenHeight)
+        
+        
+        
+        if screenWidth == 320 {
+            let topConstraint = NSLayoutConstraint(item: self.appName,
+                attribute: .Top,
+                relatedBy: .Equal,
+                toItem: self.view,
+                attribute: .Top,
+                multiplier: 1.0,
+                constant: 60.0);
+            self.view.addConstraint(topConstraint);
+            
+            
+            let constraintButtonPlayHeight1 = NSLayoutConstraint (item: self.choice1Label,
+                attribute: NSLayoutAttribute.Height,
+                relatedBy: NSLayoutRelation.Equal,
+                toItem: nil,
+                attribute: NSLayoutAttribute.NotAnAttribute,
+                multiplier: 1,
+                constant: 75)
+            self.view.addConstraint(constraintButtonPlayHeight1)
+            
+            let constraintButtonPlayHeight2 = NSLayoutConstraint (item: self.choice2Label,
+                attribute: NSLayoutAttribute.Height,
+                relatedBy: NSLayoutRelation.Equal,
+                toItem: nil,
+                attribute: NSLayoutAttribute.NotAnAttribute,
+                multiplier: 1,
+                constant: 75)
+            self.view.addConstraint(constraintButtonPlayHeight2)
+
+            
+            let constraintButtonPlayHeight3 = NSLayoutConstraint (item: self.choice3Label,
+                attribute: NSLayoutAttribute.Height,
+                relatedBy: NSLayoutRelation.Equal,
+                toItem: nil,
+                attribute: NSLayoutAttribute.NotAnAttribute,
+                multiplier: 1,
+                constant: 75)
+            self.view.addConstraint(constraintButtonPlayHeight3)
+
+            
+            let constraintButtonPlayHeight4 = NSLayoutConstraint (item: self.choice4Label,
+                attribute: NSLayoutAttribute.Height,
+                relatedBy: NSLayoutRelation.Equal,
+                toItem: nil,
+                attribute: NSLayoutAttribute.NotAnAttribute,
+                multiplier: 1,
+                constant: 75)
+            self.view.addConstraint(constraintButtonPlayHeight4)
+            
+            
+            let bottomConstraintChoice1 = NSLayoutConstraint(item: self.choice1Label,
+                attribute: .Bottom,
+                relatedBy: .Equal,
+                toItem: bottomLayoutGuide,
+                attribute: .Bottom,
+                multiplier: 1.0,
+                constant: 75.0);
+            self.view.addConstraint(bottomConstraintChoice1);
+
+
+
+            
+            
+
+        }
         
         
     }
