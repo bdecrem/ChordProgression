@@ -357,7 +357,7 @@ class ViewController: UIViewController {
         
         let endGameAlert = UIAlertController(title: "", message: "This will end your game.", preferredStyle: UIAlertControllerStyle.Alert)
         
-        endGameAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action: UIAlertAction!) in
+        endGameAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action: UIAlertAction!) in
             print("Handle Ok logic here")
             self.newGame("X Pressed")
             
