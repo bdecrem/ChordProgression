@@ -22,7 +22,7 @@ let chordList1 = [[0, "D", "I-IV-V", "D-G-A", 1450], [1, "D", "I-V-IV", "D-A-G",
 
 let chordList2 = [[0, "G", "V-I-IV", "D-G-C", 5140], [1, "D", "I-IV-V", "D-G-A", 1450], [2, "D", "I-V-I", "D-A-D", 1510], [3, "D", "I-V-IV", "D-A-G", 1540], [4, "G", "I-IV-V", "G-C-D", 1450], [5, "G", "I-V-IV", "G-D-C", 1540], [6, "G", "IV-I-V", "C-G-D", 4150], [7, "G", "IV-V-I", "C-D-G", 4510]]
 
-let chordList3 = [[0, "A", "I-IV-I-V-IV", "A—D-A-E-D"], [1, "A", "I-IV-V", "Ahi-D-E (PC)"], [2, "A", "I-V-IV", "A—E-D"], [3, "A", "I-V-IV-I-V", "A-E-D-A-E"], [4, "A", "I-V-IV-V", "A-E-D-E"], [5, "C", "I-IV-V", "C-Fhi-G"], [6, "C", "I-IV-V", "C-F-G"], [7, "C", "I-IV-V", "Chi—F-G (PC)"], [8, "C", "I-V-IV", "Chi-G-F"], [9, "C", "I-V-IV", "C-G-F"], [10, "D", "I-IV-V", "D-G-A (PC)"], [11, "D", "I-IV-V", "Dhi-G-A"], [12, "D", "I-V-IV-IV", "D-A-G-G"], [13, "D", "I-V-IV", "D-A-G"], [14, "D", "I-V-I-IV", "Dhi-A-Dhi-G"], [15, "E", "I-IV-I-V-IV", "E-A-E-B-A (PC)"], [16, "E", "I-IV-V-IV", "E-A-B-A"], [17, "E", "I-V-IV", "E-B-A"], [18, "E", "I-V-IV", "Ehi-B-A (PC)"], [19, "G", "I-IV-V", "G-C-D"], [20, "G", "I-IV-V", "G-C-D (PC)"], [21, "G", "I-IV-V", "Ghi-C-D"], [22, "G", "I-V-IV", "G-D-C"], [23, "G", "I-V-IV-V", "G-D-C-D"]]
+let chordList3 = [[0, "A", "I-IV-I-V-IV", "A-D-A-E-D"], [1, "A", "   I-IV-V", "Ahi-D-E (PC)"], [2, "A", "I-V-IV", "A—E-D"], [3, "A", "I-V-IV-I-V", "A-E-D-A-E"], [4, "A", "I-V-IV-V", "A-E-D-E"], [5, "C", "I-IV-V", "C-Fhi-G"], [6, "C", "I-IV-V", "C-F-G"], [7, "C", "I-IV-V", "Chi—F-G (PC)"], [8, "C", "I-V-IV", "Chi-G-F"], [9, "C", "I-V-IV", "C-G-F"], [10, "D", "I-IV-V", "D-G-A (PC)"], [11, "D", "I-IV-V", "Dhi-G-A"], [12, "D", "I-V-IV-IV", "D-A-G-G"], [13, "D", "I-V-IV", "D-A-G"], [14, "D", "I-V-I-IV", "Dhi-A-Dhi-G"], [15, "E", "I-IV-I-V-IV", "E-A-E-B-A (PC)"], [16, "E", "I-IV-V-IV", "E-A-B-A"], [17, "E", "I-V-IV", "E-B-A"], [18, "E", "I-V-IV", "Ehi-B-A (PC)"], [19, "G", "I-IV-V", "G-C-D"], [20, "G", "I-IV-V", "G-C-D (PC)"], [21, "G", "I-IV-V", "Ghi-C-D"], [22, "G", "I-V-IV", "G-D-C"], [23, "G", "I-V-IV-V", "G-D-C-D"]]
 
 let chordList4 = [[0, "A", "IV-V-I-I", "D-E-A-A"],  [1, "A", "V-I-IV-V", "E-A-D-E"], [2, "A", "V-vi-I-I",  "E-f#m-A-A"], [3, "A",  "vi-IV-I", "f#m-D-A"], [4, "C", "I-IV-V", "C-F-G"], [5, "C", "I-IV-vi-V", "C-F-am-G"], [6, "C", "I-V-vi-IV", "C-G-am-F"], [7, "C", "V-IV-V-I", "G-F-G-C"], [8, "C", "V-vi-i-i", "G-am-C-C"], [9, "C", "vi-I-V-vi", "am-C-G-am"], [10, "C", "vi-I-vi-V", "am-C-am-G"]]
 
@@ -582,8 +582,8 @@ class ViewController: UIViewController {
     
     
     // evaluate if the level is over, respond accordingly
-    if plays == 3 {
-        if points > 1 {
+    if plays == 10 {
+        if points > 7 {
             self.sadFace.image = smileyHappyImage
             levelWinLoseMessage.text = "Level \(level + 1) passed!"
             if (level == 3) {
